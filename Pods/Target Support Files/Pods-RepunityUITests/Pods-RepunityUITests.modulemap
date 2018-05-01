@@ -1,0 +1,6 @@
+framework module Pods_RepunityUITests {
+  umbrella header "Pods-RepunityUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
