@@ -13,13 +13,18 @@ class resultsCell: UITableViewCell {
     //variables
     
     //outlets
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var raceLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var funFactText: UITextView!
+    @IBOutlet weak var collegeLabel: UILabel!
+    @IBOutlet weak var currPositionLabel: UILabel!
+    @IBOutlet weak var currEmployerLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
+        profileImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,5 +36,14 @@ class resultsCell: UITableViewCell {
     //actions
     
     //functions
+    func setResults(resultRoleModel: RoleModel){
+        nameLabel.text = resultRoleModel.name
+        //profileImageView.image = 
+        funFactText.text = resultRoleModel.funFact
+        collegeLabel.text = resultRoleModel.undergradCollege
+        currPositionLabel.text = resultRoleModel.currOccupation
+        currEmployerLabel.text = resultRoleModel.currEmployer
+        
+    }
 
 }
