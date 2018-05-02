@@ -19,6 +19,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //variables
     var resultModels = [RoleModel]()
+    var category = ""
     
             //mock data
    /*  var resultModels = [
@@ -32,20 +33,56 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        //tableView.tableFooterView = UIView()
         tableView.reloadData()
-        observeResults()
+        if category != "" {
+            print("AND THE GAG IS: Category : \(category)")
+            observeCatResults()
+
+        } else {
+             observeResults()
+        }
     }
     
     
     //functions
-    func observeResults() {
+    func getIdInd() -> (String, String) {
+        var stringOfCatWords = self.category.components(separatedBy: " ")
+        let resultId = stringOfCatWords[0]
+        let resultIndustry =  stringOfCatWords[2]
+
+        return(resultId,resultIndustry)
+    }
+    
+    func checkIfMatchCat(possModel: RoleModel) -> Bool {
+        let (resultId, resultIndustry) = getIdInd()
+        
+        if possModel.industry == resultIndustry {
+            if possModel.race == resultId {
+                return true
+            } else if possModel.gender == resultId {
+                return true
+            } else if possModel.isLGBTQ == true && resultId == "LGBTQ"{
+                return true
+            } else if possModel.isFirstGen == true && resultId == "firstGen" {
+                return true
+            }
+        } else {
+            return false
+        }
+        return false
+    }
+    
+    //query relevant catorgies' roleModels and fill them ont he results page
+    //instead of return all RoleModels, only return those from relevant segues
+    func observeCatResults() {
         let resultsRef = Database.database().reference().child("roleModels")
         resultsRef.observe(.value, with: { snapshot in
             var tempResults = [RoleModel]()
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String: Any],
+                    let uuid = dict["uuid"] as? String,
                     let name = dict["name"] as? String,
                     let race = dict["race"] as? String,
                     let gender = dict["gender"] as? String,
@@ -62,7 +99,48 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     let currOccupation = dict["currJobTitle"] as? String,
                     let relevantGroups = dict["supportGroups"] as? String {
                     
-                    let resultRoleModel = RoleModel(name: name, img: photoURL, funFact: funFact, race: race, gender: gender, isLGBTQ: isLGBT, isFirstGen: isFirstGen, undergradCollege: college, primaryMajor: major_1, gradYear: gradYear, industry: industry_1, currOccupation: currOccupation, currEmployer: currEmployer, relevantGroups: relevantGroups)
+                    let resultRoleModel = RoleModel(uuid : uuid, name: name, imgURL: url, funFact: funFact, race: race, gender: gender, isLGBTQ: isLGBT, isFirstGen: isFirstGen, undergradCollege: college, primaryMajor: major_1, gradYear: gradYear, industry: industry_1, currOccupation: currOccupation, currEmployer: currEmployer, relevantGroups: relevantGroups)
+                        
+                    if self.checkIfMatchCat(possModel: resultRoleModel) {
+                        tempResults.append(resultRoleModel)
+
+                    } else {
+                        continue
+                    }
+                }
+            }
+            
+            self.resultModels = tempResults
+            self.tableView.reloadData()
+        })
+        
+    }
+    
+    func observeResults() {
+        let resultsRef = Database.database().reference().child("roleModels")
+        resultsRef.observe(.value, with: { snapshot in
+            var tempResults = [RoleModel]()
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                    let dict = childSnapshot.value as? [String: Any],
+                    let uuid = dict["uuid"] as? String,
+                    let name = dict["name"] as? String,
+                    let race = dict["race"] as? String,
+                    let gender = dict["gender"] as? String,
+                    let isLGBT = dict["isLGBTQ"] as? Bool,
+                    let isFirstGen = dict["isFirstGen"] as? Bool,
+                    let college = dict["underGrad"] as? String,
+                    let major_1 = dict["primaryMajor"] as? String,
+                    let gradYear = dict["gradYear"] as? String,
+                    let photoURL = dict["photoURL"] as? String,
+                    let url = URL(string:photoURL),
+                    let funFact = dict["funFact"] as? String,
+                    let industry_1 = dict["industry"] as? String,
+                    let currEmployer = dict["currEmployer"] as? String,
+                    let currOccupation = dict["currJobTitle"] as? String,
+                    let relevantGroups = dict["supportGroups"] as? String {
+                    
+                    let resultRoleModel = RoleModel(uuid: uuid, name: name, imgURL: url, funFact: funFact, race: race, gender: gender, isLGBTQ: isLGBT, isFirstGen: isFirstGen, undergradCollege: college, primaryMajor: major_1, gradYear: gradYear, industry: industry_1, currOccupation: currOccupation, currEmployer: currEmployer, relevantGroups: relevantGroups)
                     tempResults.append(resultRoleModel)
                     
                 }
@@ -92,7 +170,6 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
     //actions
     
 

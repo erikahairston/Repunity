@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate  {
     
     //outlets
     @IBOutlet weak var collegeText: UITextField!
@@ -44,7 +44,13 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-         selectImg()
+        selectImg()
+        self.collegeText.delegate = self
+        self.gradYear.delegate = self
+        self.primaryMajor.delegate = self
+        self.currJobTitle.delegate = self
+        self.currEmployer.delegate = self
+        self.supportiveGroups.delegate = self
         
     }
     
@@ -73,15 +79,24 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                 //self.performErrorAlert(message: "unable to upload pro pic")
             }
         }
-
         self.performSegue(withIdentifier: "signUpCompletetoHome", sender: nil)
 
-        
       let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
         delegate.rememberLogin()
     }
     
     //funcitons
+    //hides keyboard when user presses return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        collegeText.resignFirstResponder()
+        gradYear.resignFirstResponder()
+        primaryMajor.resignFirstResponder()
+        currJobTitle.resignFirstResponder()
+        currEmployer.resignFirstResponder()
+        supportiveGroups.resignFirstResponder()
+        return true
+    }
+    
     func selectImg() {
         profileImage.layer.cornerRadius = profileImage.frame.size.width/2
         profileImage.clipsToBounds = true
@@ -112,7 +127,7 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             case 1:
                 self.industrySelection = "Government";
             case 2:
-                self.industrySelection = "Art & Media";
+                self.industrySelection = "Art";
             default:
                 self.industrySelection = "Tech";
         }
@@ -190,7 +205,7 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         print(datURL)
     
         
-        let role_model = ["name" : self.firstName, "email" : (Auth.auth().currentUser!.email!), "photoURL" : datURL, "race" : self.raceSelection, "gender" : self.genderSelection, "isLGBTQ" : self.isLGBTQSelection, "isFirstGen" : isFirstGenSelection, "underGrad" : collegeText.text!, "gradYear" : self.gradYear.text!, "primaryMajor" : self.primaryMajor.text!, "industry" : self.industrySelection, "currJobTitle" : currJobTitle.text!, "currEmployer" : currEmployer.text!, "supportGroups" : supportiveGroups!.text!, "funFact" : funFact] as [String : Any]
+        let role_model = ["uuid" : (Auth.auth().currentUser?.uid)!, "name" : self.firstName, "email" : (Auth.auth().currentUser!.email!), "photoURL" : datURL, "race" : self.raceSelection, "gender" : self.genderSelection, "isLGBTQ" : self.isLGBTQSelection, "isFirstGen" : isFirstGenSelection, "underGrad" : collegeText.text!, "gradYear" : self.gradYear.text!, "primaryMajor" : self.primaryMajor.text!, "industry" : self.industrySelection, "currJobTitle" : currJobTitle.text!, "currEmployer" : currEmployer.text!, "supportGroups" : supportiveGroups!.text!, "funFact" : funFact] as [String : Any]
         
         self.ref.child("roleModels").child((Auth.auth().currentUser?.uid)!).setValue(role_model)
         

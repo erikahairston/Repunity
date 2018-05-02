@@ -38,7 +38,10 @@ class resultsCell: UITableViewCell {
     //functions
     func setResults(resultRoleModel: RoleModel){
         nameLabel.text = resultRoleModel.name
-        //profileImageView.image = 
+        ImageService.getImage(withURL: resultRoleModel.imgURL) { (image) in
+            self.profileImageView.image = image
+        }
+        //profileImageView.image =
         funFactText.text = resultRoleModel.funFact
         collegeLabel.text = resultRoleModel.undergradCollege
         currPositionLabel.text = resultRoleModel.currOccupation

@@ -17,6 +17,7 @@
 		033F274820979008001EAF4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F350208F8F120045A184 /* AppDelegate.swift */; };
 		033F274920979009001EAF4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F350208F8F120045A184 /* AppDelegate.swift */; };
 		033F274B2097AA9B001EAF4D /* icons8-female-profile-filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 033F274A2097AA9A001EAF4D /* icons8-female-profile-filled-100.png */; };
+		033F274D2098660C001EAF4D /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
 		03703898208FD15300561E06 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03703897208FD15300561E06 /* signUpVC.swift */; };
 		0370389C2090200100561E06 /* accountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0370389B2090200100561E06 /* accountVC.swift */; };
 		0370389E2091029800561E06 /* resultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0370389D2091029800561E06 /* resultsVC.swift */; };
@@ -35,6 +36,7 @@
 		0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F372208F8F180045A184 /* RepunityUITests.swift */; };
 		0372F381208FAE160045A184 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F380208FAE160045A184 /* signInVC.swift */; };
 		0372F383208FC71F0045A184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0372F382208FC71F0045A184 /* GoogleService-Info.plist */; };
+		03C76692209955310053AEB8 /* topModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C76691209955300053AEB8 /* topModelCell.swift */; };
 		03F7045A2092655100D44225 /* catCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F704592092655100D44225 /* catCell.swift */; };
 		33CD3DB9FB46361FE68F53CC /* Pods_RepunityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD671A5921B0BD55DA60E3 /* Pods_RepunityUITests.framework */; };
 		9AD7E05E84B1F33CA412C998 /* Pods_Repunity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B44D2CFC89C4C9529EF0D12 /* Pods_Repunity.framework */; };
@@ -63,6 +65,7 @@
 		033F27422096E125001EAF4D /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
 		033F274420977161001EAF4D /* part2SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = part2SignUpVC.swift; sourceTree = "<group>"; };
 		033F274A2097AA9A001EAF4D /* icons8-female-profile-filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-female-profile-filled-100.png"; sourceTree = "<group>"; };
+		033F274C2098660C001EAF4D /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		03703897208FD15300561E06 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		0370389B2090200100561E06 /* accountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountVC.swift; sourceTree = "<group>"; };
 		0370389D2091029800561E06 /* resultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsVC.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		0372F374208F8F180045A184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0372F380208FAE160045A184 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		0372F382208FC71F0045A184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03C76691209955300053AEB8 /* topModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topModelCell.swift; sourceTree = "<group>"; };
 		03F704592092655100D44225 /* catCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catCell.swift; sourceTree = "<group>"; };
 		0FC56F2A7A697F828EF753F3 /* Pods-RepunityUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepunityUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepunityUITests/Pods-RepunityUITests.release.xcconfig"; sourceTree = "<group>"; };
 		144A9B7532D5A69DA4CB796F /* Pods_RepunityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RepunityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,11 +167,13 @@
 				03703897208FD15300561E06 /* signUpVC.swift */,
 				033F274420977161001EAF4D /* part2SignUpVC.swift */,
 				0370389B2090200100561E06 /* accountVC.swift */,
-				0372F352208F8F130045A184 /* homeVC.swift */,
 				0372F354208F8F130045A184 /* discoverVC.swift */,
 				03F704592092655100D44225 /* catCell.swift */,
+				0372F352208F8F130045A184 /* homeVC.swift */,
+				03C76691209955300053AEB8 /* topModelCell.swift */,
 				0370389D2091029800561E06 /* resultsVC.swift */,
 				037038A12091150200561E06 /* resultsCell.swift */,
+				033F274C2098660C001EAF4D /* ImageService.swift */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
 				033F273D20966460001EAF4D /* RoleModel.swift */,
 				0372F359208F8F180045A184 /* Assets.xcassets */,
@@ -441,12 +447,14 @@
 				0370389C2090200100561E06 /* accountVC.swift in Sources */,
 				03F7045A2092655100D44225 /* catCell.swift in Sources */,
 				033F274520977161001EAF4D /* part2SignUpVC.swift in Sources */,
+				033F274D2098660C001EAF4D /* ImageService.swift in Sources */,
 				0372F355208F8F130045A184 /* discoverVC.swift in Sources */,
 				0372F351208F8F120045A184 /* AppDelegate.swift in Sources */,
 				0372F381208FAE160045A184 /* signInVC.swift in Sources */,
 				033F273E20966460001EAF4D /* RoleModel.swift in Sources */,
 				03703898208FD15300561E06 /* signUpVC.swift in Sources */,
 				0372F353208F8F130045A184 /* homeVC.swift in Sources */,
+				03C76692209955310053AEB8 /* topModelCell.swift in Sources */,
 				037038A22091150200561E06 /* resultsCell.swift in Sources */,
 				0370389E2091029800561E06 /* resultsVC.swift in Sources */,
 			);

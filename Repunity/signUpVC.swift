@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class signUpVC: UIViewController {
+class signUpVC: UIViewController, UITextFieldDelegate {
     
     //variables
     var ref: DatabaseReference! = Database.database().reference()
@@ -34,6 +34,8 @@ class signUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.firstNameText.delegate = self
+        self.funFactText.delegate = self
        
     }
     
@@ -55,6 +57,14 @@ class signUpVC: UIViewController {
     
     
     //functions
+    
+    //hides keyboard when user presses return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        firstNameText.resignFirstResponder()
+        funFactText.resignFirstResponder()
+        return true
+    }
+    
     func mapGenderIndx() {
         switch genderSeg.selectedSegmentIndex
         {

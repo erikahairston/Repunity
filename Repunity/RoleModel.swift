@@ -9,9 +9,18 @@
 import Foundation
 import UIKit
 
-class RoleModel {
+class RoleModel  : Hashable {
+    var hashValue: Int {
+        return ObjectIdentifier(self).hashValue
+    }
+    
+    static func == (lhs: RoleModel, rhs: RoleModel) -> Bool {
+         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+    
+    var uuid:String
     var name:String
-    var img:String //make a url or uiimage?
+    var imgURL:URL //make a url or uiimage?
     var funFact:String
     
     //ids
@@ -35,9 +44,10 @@ class RoleModel {
     var relevantGroups:String
     var resources = [String]()
     
-    init(name:String, img:String, funFact:String, race:String, gender:String, isLGBTQ:Bool, isFirstGen:Bool, undergradCollege:String, primaryMajor:String, gradYear:String, industry:String, currOccupation:String, currEmployer:String, relevantGroups:String) {
+    init(uuid:String, name:String, imgURL:URL, funFact:String, race:String, gender:String, isLGBTQ:Bool, isFirstGen:Bool, undergradCollege:String, primaryMajor:String, gradYear:String, industry:String, currOccupation:String, currEmployer:String, relevantGroups:String) {
+        self.uuid = uuid
         self.name = name
-        self.img = img //to do
+        self.imgURL = imgURL //to do
         self.funFact = funFact
         
         //ids
