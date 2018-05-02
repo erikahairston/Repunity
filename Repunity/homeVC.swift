@@ -57,13 +57,14 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     //top role_models ranking func
     /*every time the app is opened i iterate thru every other user giving them a score based on their attributes in relation to the current user */
     func observeTopResults() {
+        var currentUser = RoleModel()
         let resultsRef = Database.database().reference().child("roleModels")
         resultsRef.observe(.value, with: { snapshot in
             var tempResults = [RoleModel]()
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String: Any],
-                    let uuid = dict["uudid"] as? String,
+                    let uuid = dict["uuid"] as? String,
                     let name = dict["name"] as? String,
                     let race = dict["race"] as? String,
                     let gender = dict["gender"] as? String,
@@ -83,14 +84,14 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                     let resultRoleModel = RoleModel(uuid: uuid, name: name, imgURL: url, funFact: funFact, race: race, gender: gender, isLGBTQ: isLGBT, isFirstGen: isFirstGen, undergradCollege: college, primaryMajor: major_1, gradYear: gradYear, industry: industry_1, currOccupation: currOccupation, currEmployer: currEmployer, relevantGroups: relevantGroups)
                     
                     if resultRoleModel.uuid == (Auth.auth().currentUser?.uid)! {
-                        continue
+                        currentUser = resultRoleModel
                     } else {
                         tempResults.append(resultRoleModel)
                     }
                     
                 }
             }
-            let sortedRMs = self.assignScores(rankingModels : tempResults)
+            let sortedRMs = self.assignScores(rankingModels : tempResults, nowUser : currentUser)
         
             self.topModels = sortedRMs
             self.collectionView.reloadData()
@@ -99,24 +100,54 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
  
-    func assignScores(rankingModels : [RoleModel]) -> [RoleModel] {
+    func assignScores(rankingModels : [RoleModel], nowUser : RoleModel) -> [RoleModel] {
         var matchScore = [RoleModel : Int]()
         var score = 0
         for eachRm in rankingModels {
             
-            score = calculateScore(compareRm : eachRm)
+            score = calculateScore(compareRm : eachRm, nowUser1: nowUser)
             matchScore[eachRm] = score
         }
         
-        let sortedRoleModels = Array(matchScore.keys).sorted(by: {matchScore[$0]! < matchScore[$1]!})
+        let sortedRoleModels = Array(matchScore.keys).sorted(by: {matchScore[$0]! > matchScore[$1]!})
         print("SORTED ROLEMODELS BELOW")
-        print(sortedRoleModels)
+        print(sortedRoleModels[0].race)
         return sortedRoleModels
     }
     
-    func calculateScore(compareRm: RoleModel) -> Int {
+    func calculateScore(compareRm: RoleModel, nowUser1: RoleModel) -> Int {
         var score = 0
-        //if Auth.auth().currentUser?.uid
+        if nowUser1.race == compareRm.race {
+            print("nowUser1.race = \(nowUser1.race) compareRm.race = \(compareRm.race)")
+            score = score + 5
+        }
+        if nowUser1.gender == compareRm.gender {
+            print("nowUser1.gender = \(nowUser1.gender) compareRm.race = \(compareRm.gender)")
+
+            score = score + 5
+        }
+        if nowUser1.industry == compareRm.industry {
+            print("nowUser1.industry = \(nowUser1.industry) compareRm.industry = \(compareRm.industry)")
+
+            score = score + 5
+        }
+        if nowUser1.primaryMajor == compareRm.primaryMajor {
+            print("nowUser1.primaryMajor = \(nowUser1.primaryMajor) ompareRm.primaryMajor = \(compareRm.primaryMajor)")
+
+            score = score + 5
+        }
+        if nowUser1.isLGBTQ && compareRm.isLGBTQ {
+            print("nowUser1.isLGBTQ = \(nowUser1.isLGBTQ) compareRm.isLGBTQ = \(compareRm.isLGBTQ)")
+
+            score = score + 5
+        }
+        if nowUser1.isFirstGen && compareRm.isFirstGen {
+            print("nowUser1.isFirstGen = \(nowUser1.isFirstGen) compareRm.isFirstGen = \(compareRm.isFirstGen)")
+
+            score = score + 5
+        }
+        print("score of \(compareRm.name) is \(score)")
+        
         
         return score
         

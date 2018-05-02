@@ -70,5 +70,30 @@ class RoleModel  : Hashable {
         
     }
     
+    init() {
+        uuid = ""
+        name = ""
+        imgURL = URL.init(string: "https://www.google.com/")!
+        funFact = ""
+        
+        //ids
+        race = ""
+        gender = ""
+        isLGBTQ = false
+       isFirstGen = false
+        
+        //school info
+        undergradCollege = ""
+        primaryMajor = ""
+        gradYear = ""
+        
+        //career info
+        industry = ""
+        currOccupation = ""
+        currEmployer = ""
+        relevantGroups = ""
+        
+    }
+    
     
 }
