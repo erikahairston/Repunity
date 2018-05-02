@@ -96,13 +96,13 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             self.topModels = sortedRMs
             self.collectionView.reloadData()
         })
-        
     }
     
  
     func assignScores(rankingModels : [RoleModel], nowUser : RoleModel) -> [RoleModel] {
         var matchScore = [RoleModel : Int]()
         var score = 0
+        var topTenRMs = [RoleModel]()
         for eachRm in rankingModels {
             
             score = calculateScore(compareRm : eachRm, nowUser1: nowUser)
@@ -110,9 +110,15 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         }
         
         let sortedRoleModels = Array(matchScore.keys).sorted(by: {matchScore[$0]! > matchScore[$1]!})
-        print("SORTED ROLEMODELS BELOW")
-        print(sortedRoleModels[0].race)
-        return sortedRoleModels
+        if sortedRoleModels.count > 10 {
+            for count in 0...9 {
+                topTenRMs.append(sortedRoleModels[count])
+            }
+            return topTenRMs
+        } else {
+            return sortedRoleModels
+        }
+       return sortedRoleModels
     }
     
     func calculateScore(compareRm: RoleModel, nowUser1: RoleModel) -> Int {
