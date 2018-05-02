@@ -33,13 +33,31 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         collectionView.dataSource = self
         collectionView.reloadData()
         observeTopResults()
-        
+            
     }
     
     //actions
 
     
     //functions
+    
+    func pickSpotlight(countedRMs : Int) -> Int {
+        let diceRoll = Int(arc4random_uniform(UInt32(countedRMs)))
+        print("dice roll int: \(countedRMs)")
+        
+        return diceRoll
+        
+    }
+    func observeSpotlight(passedRoleModel : RoleModel) {
+        nameLabel.text = passedRoleModel.name
+        currJobLabel.text = passedRoleModel.currOccupation
+        employerLabel.text = passedRoleModel.currEmployer
+        funFactLabel.text = passedRoleModel.funFact
+        ImageService.getImage(withURL: passedRoleModel.imgURL) { (image) in
+           self.spotLightImg.image = image
+        }
+        
+    }
     
     //# of views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -88,13 +106,14 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                     } else {
                         tempResults.append(resultRoleModel)
                     }
-                    
                 }
             }
             let sortedRMs = self.assignScores(rankingModels : tempResults, nowUser : currentUser)
-        
             self.topModels = sortedRMs
             self.collectionView.reloadData()
+            
+            let newRM = tempResults[self.pickSpotlight(countedRMs: tempResults.count)]
+            self.observeSpotlight(passedRoleModel: newRM)
         })
     }
     
