@@ -13,7 +13,9 @@ import FirebaseDatabase
 
 class singleMsgCell: UITableViewCell {
 
+   //variables
    
+    //outlets
     @IBOutlet weak var msgText: UILabel!
     @IBOutlet weak var userPicImageView: UIImageView!
     
@@ -34,6 +36,7 @@ class singleMsgCell: UITableViewCell {
         // cell.textLabel?.text = name + ": " + text
         msgText.text = messagedUser.senderName + ": " + messagedUser.text
         photoURL = messagedUser.getSenderRoleModel().imgURL.absoluteString
+        print("PHOTO URL in setMSGs insingleMsgCell: \(photoURL)")
 
         if photoURL == "" {
             self.userPicImageView.image = UIImage(named: "icons8-female-profile-filled-100.png")

@@ -147,8 +147,6 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! msgCell
-        print("msgdUsers: TABLEVIEW")
-        print(msgdUsers[0].receiverName)
         cell.setMsgUsers(messagedUser : msgdUsers[indexPath.row])
         
         return cell

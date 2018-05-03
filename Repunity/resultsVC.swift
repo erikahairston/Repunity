@@ -20,6 +20,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //variables
     var resultModels = [RoleModel]()
     var category = ""
+    var selectedResult = RoleModel()
     
             //mock data
    /*  var resultModels = [
@@ -157,6 +158,11 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return resultModels.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedResult = resultModels[indexPath.row]
+        performSegue(withIdentifier: "resultToProfile", sender: nil)
+    }
+    
     //define cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! resultsCell
@@ -169,6 +175,13 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //cell.postImage.sd_setImage(with: URL(string: self.postImageURLArray[indexPath.row]))
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resultToProfile" {
+            let destinationVC = segue.destination as! profileViewController
+            destinationVC.currRoleMOdel = selectedResult
+        }
     }
     //actions
     

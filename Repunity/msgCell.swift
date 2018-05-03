@@ -51,12 +51,13 @@ class msgCell: UITableViewCell {
             photoURL = messagedUser.getSenderRoleModel().imgURL.absoluteString
         }
         textLabel1.text = messagedUser.text
-        if photoURL != "" {
+        if (photoURL != "") || photoURL != ("https://www.google.com/") {
             postImage.image = UIImage(named: "icons8-female-profile-filled-100.png")
         } else {
             ImageService.getImage(withURL: URL.init(string: photoURL)!) { (image) in
                 self.postImage.image = image
             }
         }
+        print("SCOTT THIS IS PHOTO URL: \(photoURL)")
     }
 }

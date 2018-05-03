@@ -112,7 +112,6 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
             
 
-            
             let resultsRef = Database.database().reference().child("roleModels")
             resultsRef.queryOrdered(byChild: "uuid").queryEqual(toValue: self.currUserID)
                 .observeSingleEvent(of: .value) { (snapshot) in
@@ -136,7 +135,6 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         task.resume()
 //        return self.currName
 
-        
     }
  
 
@@ -184,9 +182,9 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             print(receiverName)
             print("receiver name mdata")
             print(mdata["receiverName"] as String?)
-    //        if let photoURL = Auth.auth().currentUser?.photoURL {
-    //            mdata["photoURL"] = photoURL.absoluteString
-    //        }
+//            if let photoURL = Auth.auth().currentUser?.photoURL {
+//                mdata["senderPhotoURL"] = photoURL.absoluteString
+//            }
             mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
             print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
             mdata["sentToID"] = receiverID
