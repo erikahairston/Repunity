@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RoleModel  : Hashable {
+class RoleModel : Hashable {
     var hashValue: Int {
         return ObjectIdentifier(self).hashValue
     }

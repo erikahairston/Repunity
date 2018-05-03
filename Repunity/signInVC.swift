@@ -20,8 +20,6 @@ class signInVC: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    
-    //variables
 
     
     override func viewDidLoad() {

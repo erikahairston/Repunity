@@ -13,6 +13,7 @@ class msgCell: UITableViewCell {
     //variables
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var textLabel1: UILabel!
     
     //outlets
 
@@ -28,6 +29,13 @@ class msgCell: UITableViewCell {
     }
     
     //functions
+    func setMsgUsers(messagedUser: Message){
+        nameLabel.text = messagedUser.senderName
+        textLabel1.text = messagedUser.text
+        
+        
+    }
+    
     
     //actions
 

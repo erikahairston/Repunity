@@ -1021,6 +1021,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="2lx-BT-Y3F" id="tBm-zT-lXk"/>
                                             <outlet property="postImage" destination="fI5-5o-fic" id="Cq1-18-HoS"/>
+                                            <outlet property="textLabel1" destination="mC3-yb-1kn" id="arB-1j-4Ix"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1043,6 +1044,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIi-af-HTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="357.60000000000002" y="-668.81559220389806"/>
+        </scene>
+        <!--DetailedChat-->
+        <scene sceneID="5de-8I-mnM">
+            <objects>
+                <viewController title="DetailedChat" id="J8b-xJ-AQQ" customClass="detailMsgVC" customModule="Repunity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fuF-MJ-Nje">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MZI-4G-1z7">
+                                <rect key="frame" x="0.0" y="84" width="375" height="370"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="106" id="4wK-VV-ScU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4wK-VV-ScU" id="cOc-Oc-BlE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MZI-4G-1z7" firstAttribute="leading" secondItem="3Km-k5-khX" secondAttribute="leading" id="T5R-US-b4J"/>
+                            <constraint firstItem="MZI-4G-1z7" firstAttribute="trailing" secondItem="3Km-k5-khX" secondAttribute="trailing" id="kEe-Af-OJH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Km-k5-khX"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="MZI-4G-1z7" id="tb8-ur-DNG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQz-SK-yIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="-669.71514242878561"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
