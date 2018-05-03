@@ -89,6 +89,10 @@ class Message : Hashable {
             receiveRm.name = values["name"] as! String
             print("receiver: \(receiveRm.name)")
             receiveRm.uuid = values["uuid"] as! String
+            print("VALUES UUID: \(values["uuid"] as! String)")
+
+            print("receiver UUID: \(receiveRm.uuid)")
+
             let asString = values["photoURL"]
             receiveRm.imgURL  = URL.init(string: "asString")!
             receiveRm.funFact = values["funFact"] as! String

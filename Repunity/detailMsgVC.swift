@@ -19,6 +19,7 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var currUserID = (Auth.auth().currentUser?.uid)!
     fileprivate var _refHandle: DatabaseHandle!
     var ourMessages = [Message]()
+    var currName = ""
 
 
     //outlets
@@ -88,6 +89,20 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let receiverID = selectedUserToChat.uuid
         return(receiverID,receiverName)
     }
+    
+    
+    func getSender() -> String {
+        let resultsRef = Database.database().reference().child("roleModels")
+        resultsRef.queryOrdered(byChild: "uuid").queryEqual(toValue: self.currUserID).observeSingleEvent(of: .childAdded) { (snapshot) in
+            
+            let values = snapshot.value! as! NSDictionary
+            self.currName = values["name"] as! String
+            print("sender!!!: \(self.currName)")
+        }
+        print("sender!BOO!!: \(self.currName)")
+        return self.currName
+    }
+ 
 
     
     // UITextViewDelegate protocol methods
@@ -105,12 +120,13 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         var mdata = data
         self.ourMessages = []
         let (receiverID, receiverName) = getReceiver()
-        mdata["senderName"] = "Johnny"
+        mdata["senderName"] = getSender()
          mdata["receiverName"] = receiverName
 //        if let photoURL = Auth.auth().currentUser?.photoURL {
 //            mdata["photoURL"] = photoURL.absoluteString
 //        }
         mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
+        print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
         mdata["sentToID"] = receiverID
         
         // Push data to Firebase Database

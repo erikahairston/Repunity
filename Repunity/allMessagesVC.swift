@@ -81,8 +81,10 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
                 let text = dict["text"] as? String{
                     
                     let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text)
-                     print(singleMsg.senderName)
-                    
+                    print("printerNAME: \(singleMsg.senderName)")
+
+                    print("printerRRRNAME: \(singleMsg.receiverName)")
+
                     //dont show duplicate ppl i'm talking to
                     if singleMsg.sentByID == self.currUserID {
                         if msgIds.contains(singleMsg.sentToID) {
@@ -127,6 +129,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.chosenUser = msgdUsers[indexPath.row].getReceiverRoleModel()
+        print("HHHHHHHH: \(self.chosenUser.uuid)")
         performSegue(withIdentifier: "toSpecificChat", sender: nil)
     }
     
@@ -136,7 +139,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! msgCell
         print("msgdUsers: TABLEVIEW")
-        print(msgdUsers)
+        print(msgdUsers[0].receiverName)
         cell.setMsgUsers(messagedUser : msgdUsers[indexPath.row])
         
         return cell
@@ -146,6 +149,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "toSpecificChat" {
             let destinationVC = segue.destination as! detailMsgVC
             destinationVC.selectedUserToChat = self.chosenUser
+            print("selectedUserToChat: \(self.chosenUser.name)")
         }
     }
 }
