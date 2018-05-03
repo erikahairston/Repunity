@@ -36,6 +36,12 @@
 		0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F372208F8F180045A184 /* RepunityUITests.swift */; };
 		0372F381208FAE160045A184 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F380208FAE160045A184 /* signInVC.swift */; };
 		0372F383208FC71F0045A184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0372F382208FC71F0045A184 /* GoogleService-Info.plist */; };
+		03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
+		03C63B6A209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
+		03C63B6B209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
+		03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
+		03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
+		03C63B6F209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
 		03C76692209955310053AEB8 /* topModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C76691209955300053AEB8 /* topModelCell.swift */; };
 		03F7045A2092655100D44225 /* catCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F704592092655100D44225 /* catCell.swift */; };
 		33CD3DB9FB46361FE68F53CC /* Pods_RepunityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD671A5921B0BD55DA60E3 /* Pods_RepunityUITests.framework */; };
@@ -86,6 +92,8 @@
 		0372F374208F8F180045A184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0372F380208FAE160045A184 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		0372F382208FC71F0045A184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03C63B68209A818C00EB4446 /* allMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allMessagesVC.swift; sourceTree = "<group>"; };
+		03C63B6C209A8D6400EB4446 /* msgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msgCell.swift; sourceTree = "<group>"; };
 		03C76691209955300053AEB8 /* topModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topModelCell.swift; sourceTree = "<group>"; };
 		03F704592092655100D44225 /* catCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catCell.swift; sourceTree = "<group>"; };
 		0FC56F2A7A697F828EF753F3 /* Pods-RepunityUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepunityUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepunityUITests/Pods-RepunityUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +183,8 @@
 				037038A12091150200561E06 /* resultsCell.swift */,
 				033F274C2098660C001EAF4D /* ImageService.swift */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
+				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
+				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
 				033F273D20966460001EAF4D /* RoleModel.swift */,
 				0372F359208F8F180045A184 /* Assets.xcassets */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
@@ -446,6 +456,7 @@
 			files = (
 				0370389C2090200100561E06 /* accountVC.swift in Sources */,
 				03F7045A2092655100D44225 /* catCell.swift in Sources */,
+				03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */,
 				033F274520977161001EAF4D /* part2SignUpVC.swift in Sources */,
 				033F274D2098660C001EAF4D /* ImageService.swift in Sources */,
 				0372F355208F8F130045A184 /* discoverVC.swift in Sources */,
@@ -456,6 +467,7 @@
 				0372F353208F8F130045A184 /* homeVC.swift in Sources */,
 				03C76692209955310053AEB8 /* topModelCell.swift in Sources */,
 				037038A22091150200561E06 /* resultsCell.swift in Sources */,
+				03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */,
 				0370389E2091029800561E06 /* resultsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,10 +478,12 @@
 			files = (
 				033F274820979008001EAF4D /* AppDelegate.swift in Sources */,
 				033F274620977161001EAF4D /* part2SignUpVC.swift in Sources */,
+				03C63B6A209A818C00EB4446 /* allMessagesVC.swift in Sources */,
 				037038A32091150200561E06 /* resultsCell.swift in Sources */,
 				033F273F20966460001EAF4D /* RoleModel.swift in Sources */,
 				0372F368208F8F180045A184 /* RepunityTests.swift in Sources */,
 				0370389F2091029800561E06 /* resultsVC.swift in Sources */,
+				03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +493,12 @@
 			files = (
 				033F274920979009001EAF4D /* AppDelegate.swift in Sources */,
 				033F274720977161001EAF4D /* part2SignUpVC.swift in Sources */,
+				03C63B6B209A818C00EB4446 /* allMessagesVC.swift in Sources */,
 				037038A42091150200561E06 /* resultsCell.swift in Sources */,
 				033F274020966460001EAF4D /* RoleModel.swift in Sources */,
 				0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */,
 				037038A02091029800561E06 /* resultsVC.swift in Sources */,
+				03C63B6F209A8D6400EB4446 /* msgCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
