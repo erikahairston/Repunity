@@ -30,12 +30,7 @@ class msgCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    //functions
-    func getProPic(userID: String) -> String {
-        //todo: given an id return its profile picture
-        return ""
-    }
+
     
     func checkIsCurrSender(messagedUser: Message) -> Bool {
         if Auth.auth().currentUser?.uid == messagedUser.sentByID {
@@ -50,13 +45,13 @@ class msgCell: UITableViewCell {
         //get the opposite person's name and photo
         if checkIsCurrSender(messagedUser: messagedUser) {
             nameLabel.text = messagedUser.receiverName
-            photoURL = getProPic(userID : messagedUser.sentToID)
+            photoURL = messagedUser.getReceiverRoleModel().imgURL.absoluteString
         } else {
             nameLabel.text = messagedUser.senderName
-            photoURL = getProPic(userID : messagedUser.sentByID)
+            photoURL = messagedUser.getSenderRoleModel().imgURL.absoluteString
         }
         textLabel1.text = messagedUser.text
-        if photoURL == "" {
+        if photoURL != "" {
             postImage.image = UIImage(named: "icons8-female-profile-filled-100.png")
         } else {
             ImageService.getImage(withURL: URL.init(string: photoURL)!) { (image) in

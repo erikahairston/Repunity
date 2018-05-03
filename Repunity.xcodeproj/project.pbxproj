@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033DEEA5209B131000D0FCE8 /* singleMsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */; };
+		033DEEA6209B131000D0FCE8 /* singleMsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */; };
+		033DEEA7209B131000D0FCE8 /* singleMsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */; };
 		033F273E20966460001EAF4D /* RoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F273D20966460001EAF4D /* RoleModel.swift */; };
 		033F273F20966460001EAF4D /* RoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F273D20966460001EAF4D /* RoleModel.swift */; };
 		033F274020966460001EAF4D /* RoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F273D20966460001EAF4D /* RoleModel.swift */; };
@@ -37,8 +40,6 @@
 		0372F381208FAE160045A184 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F380208FAE160045A184 /* signInVC.swift */; };
 		0372F383208FC71F0045A184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0372F382208FC71F0045A184 /* GoogleService-Info.plist */; };
 		03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
-		03C63B6A209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
-		03C63B6B209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
 		03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
 		03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
 		03C63B6F209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleMsgCell.swift; sourceTree = "<group>"; };
 		033F273D20966460001EAF4D /* RoleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleModel.swift; sourceTree = "<group>"; };
 		033F27422096E125001EAF4D /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
 		033F274420977161001EAF4D /* part2SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = part2SignUpVC.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				033F27412096E107001EAF4D /* Imgs */,
 				0372F350208F8F120045A184 /* AppDelegate.swift */,
+				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
 				0372F380208FAE160045A184 /* signInVC.swift */,
 				03703897208FD15300561E06 /* signUpVC.swift */,
 				033F274420977161001EAF4D /* part2SignUpVC.swift */,
@@ -189,15 +192,15 @@
 				03F704592092655100D44225 /* catCell.swift */,
 				0372F352208F8F130045A184 /* homeVC.swift */,
 				03C76691209955300053AEB8 /* topModelCell.swift */,
-				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
 				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
+				03C63B70209A953700EB4446 /* detailMsgVC.swift */,
+				033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */,
 				037038A12091150200561E06 /* resultsCell.swift */,
 				033F274C2098660C001EAF4D /* ImageService.swift */,
-				0372F356208F8F130045A184 /* Main.storyboard */,
 				03C63B76209AA7AD00EB4446 /* Message.swift */,
 				0370389D2091029800561E06 /* resultsVC.swift */,
-				03C63B70209A953700EB4446 /* detailMsgVC.swift */,
 				033F273D20966460001EAF4D /* RoleModel.swift */,
+				0372F356208F8F130045A184 /* Main.storyboard */,
 				0372F359208F8F180045A184 /* Assets.xcassets */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
 				0372F35E208F8F180045A184 /* Info.plist */,
@@ -481,6 +484,7 @@
 				03C76692209955310053AEB8 /* topModelCell.swift in Sources */,
 				037038A22091150200561E06 /* resultsCell.swift in Sources */,
 				03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */,
+				033DEEA5209B131000D0FCE8 /* singleMsgCell.swift in Sources */,
 				0370389E2091029800561E06 /* resultsVC.swift in Sources */,
 				03C63B71209A953700EB4446 /* detailMsgVC.swift in Sources */,
 			);
@@ -493,7 +497,7 @@
 				033F274820979008001EAF4D /* AppDelegate.swift in Sources */,
 				03C63B72209A953700EB4446 /* detailMsgVC.swift in Sources */,
 				033F274620977161001EAF4D /* part2SignUpVC.swift in Sources */,
-				03C63B6A209A818C00EB4446 /* allMessagesVC.swift in Sources */,
+				033DEEA6209B131000D0FCE8 /* singleMsgCell.swift in Sources */,
 				037038A32091150200561E06 /* resultsCell.swift in Sources */,
 				033F273F20966460001EAF4D /* RoleModel.swift in Sources */,
 				0372F368208F8F180045A184 /* RepunityTests.swift in Sources */,
@@ -511,7 +515,7 @@
 				033F274920979009001EAF4D /* AppDelegate.swift in Sources */,
 				03C63B73209A953700EB4446 /* detailMsgVC.swift in Sources */,
 				033F274720977161001EAF4D /* part2SignUpVC.swift in Sources */,
-				03C63B6B209A818C00EB4446 /* allMessagesVC.swift in Sources */,
+				033DEEA7209B131000D0FCE8 /* singleMsgCell.swift in Sources */,
 				037038A42091150200561E06 /* resultsCell.swift in Sources */,
 				033F274020966460001EAF4D /* RoleModel.swift in Sources */,
 				0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */,

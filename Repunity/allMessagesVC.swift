@@ -15,11 +15,11 @@ import FirebaseDatabase
 
 class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     //variables
     var msgdUsers = [Message]()
     var ref: DatabaseReference! = Database.database().reference()
     var currUserID = (Auth.auth().currentUser?.uid)!
+    var chosenUser = RoleModel()
 
     var messages: [DataSnapshot]! = []
 
@@ -71,8 +71,6 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         var msgIds = [String]()
         let resultsRef = Database.database().reference().child("messages")
         resultsRef.observe(.value, with: { snapshot in
-            print("MSGS")
-            print(snapshot.value!)
             for child in snapshot.children {
                  if let childSnapshot = child as? DataSnapshot,
                 let dict = childSnapshot.value as? [String: Any],
@@ -128,7 +126,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //msgdUsers[indexPath.row].getReceiverRoleModel()
+        self.chosenUser = msgdUsers[indexPath.row].getReceiverRoleModel()
         performSegue(withIdentifier: "toSpecificChat", sender: nil)
     }
     
@@ -137,11 +135,18 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! msgCell
-        print("TABLEVIEW")
+        print("msgdUsers: TABLEVIEW")
         print(msgdUsers)
         cell.setMsgUsers(messagedUser : msgdUsers[indexPath.row])
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSpecificChat" {
+            let destinationVC = segue.destination as! detailMsgVC
+            destinationVC.selectedUserToChat = self.chosenUser
+        }
     }
 }
     

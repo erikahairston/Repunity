@@ -44,6 +44,7 @@ class Message : Hashable {
         text = ""
     }
     
+    //given a message, returns the RoleModel of the sender
     func getSenderRoleModel() -> RoleModel {
         var senderRM = RoleModel()
         let resultsRef = Database.database().reference().child("roleModels")
@@ -77,7 +78,7 @@ class Message : Hashable {
         }
         return senderRM
     }
-    
+    //given a message, returns the RoleModel of the receiver
     func getReceiverRoleModel() -> RoleModel {
         var receiveRm = RoleModel()
         let resultsRef = Database.database().reference().child("roleModels")
