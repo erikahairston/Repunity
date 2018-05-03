@@ -18,7 +18,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //variables
     var msgdUsers = [Message]()
-    var ref: DatabaseReference!
+    var ref: DatabaseReference! = Database.database().reference()
     var currUserID = (Auth.auth().currentUser?.uid)!
 
     var messages: [DataSnapshot]! = []
@@ -43,8 +43,6 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         observeUsersWithMsgs()
         tableView.reloadData()
 
-
-        
 
         // Do any additional setup after loading the view.
     }
@@ -127,6 +125,11 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     //setup Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return msgdUsers.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //msgdUsers[indexPath.row].getReceiverRoleModel()
+        performSegue(withIdentifier: "toSpecificChat", sender: nil)
     }
     
 

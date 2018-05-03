@@ -48,6 +48,8 @@
 		03C63B77209AA7AD00EB4446 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B76209AA7AD00EB4446 /* Message.swift */; };
 		03C63B78209AAE7300EB4446 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B76209AA7AD00EB4446 /* Message.swift */; };
 		03C63B79209AAE7400EB4446 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B76209AA7AD00EB4446 /* Message.swift */; };
+		03C63B7A209ACE0000EB4446 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
+		03C63B7B209ACE0000EB4446 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
 		03C76692209955310053AEB8 /* topModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C76691209955300053AEB8 /* topModelCell.swift */; };
 		03F7045A2092655100D44225 /* catCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F704592092655100D44225 /* catCell.swift */; };
 		33CD3DB9FB46361FE68F53CC /* Pods_RepunityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD671A5921B0BD55DA60E3 /* Pods_RepunityUITests.framework */; };
@@ -187,15 +189,15 @@
 				03F704592092655100D44225 /* catCell.swift */,
 				0372F352208F8F130045A184 /* homeVC.swift */,
 				03C76691209955300053AEB8 /* topModelCell.swift */,
-				0370389D2091029800561E06 /* resultsVC.swift */,
 				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
 				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
 				037038A12091150200561E06 /* resultsCell.swift */,
 				033F274C2098660C001EAF4D /* ImageService.swift */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
+				03C63B76209AA7AD00EB4446 /* Message.swift */,
+				0370389D2091029800561E06 /* resultsVC.swift */,
 				03C63B70209A953700EB4446 /* detailMsgVC.swift */,
 				033F273D20966460001EAF4D /* RoleModel.swift */,
-				03C63B76209AA7AD00EB4446 /* Message.swift */,
 				0372F359208F8F180045A184 /* Assets.xcassets */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
 				0372F35E208F8F180045A184 /* Info.plist */,
@@ -496,6 +498,7 @@
 				033F273F20966460001EAF4D /* RoleModel.swift in Sources */,
 				0372F368208F8F180045A184 /* RepunityTests.swift in Sources */,
 				03C63B78209AAE7300EB4446 /* Message.swift in Sources */,
+				03C63B7A209ACE0000EB4446 /* ImageService.swift in Sources */,
 				0370389F2091029800561E06 /* resultsVC.swift in Sources */,
 				03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */,
 			);
@@ -513,6 +516,7 @@
 				033F274020966460001EAF4D /* RoleModel.swift in Sources */,
 				0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */,
 				03C63B79209AAE7400EB4446 /* Message.swift in Sources */,
+				03C63B7B209ACE0000EB4446 /* ImageService.swift in Sources */,
 				037038A02091029800561E06 /* resultsVC.swift in Sources */,
 				03C63B6F209A8D6400EB4446 /* msgCell.swift in Sources */,
 			);
