@@ -182,9 +182,9 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             print(receiverName)
             print("receiver name mdata")
             print(mdata["receiverName"] as String?)
-//            if let photoURL = Auth.auth().currentUser?.photoURL {
-//                mdata["senderPhotoURL"] = photoURL.absoluteString
-//            }
+            if let photoURL = Auth.auth().currentUser?.photoURL {
+                mdata["senderPhotoURL"] = photoURL.absoluteString
+            }
             mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
             print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
             mdata["sentToID"] = receiverID
