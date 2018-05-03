@@ -68,11 +68,22 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                  /*   (sentBy = CurrUser && sentTo = You
                         or
                         sentBy = You && sentTo = Me) */
+                    
                     if (singleMsg.sentByID  == self.currUserID) && (singleMsg.sentToID == self.selectedUserToChat.uuid) {
                         self.ourMessages.append(singleMsg)
-                    }
+                        print("first instance 1")
+                        print(self.selectedUserToChat.uuid)
+                    } else {
                     if (singleMsg.sentByID  == self.selectedUserToChat.uuid) && (singleMsg.sentToID == self.currUserID) {
                         self.ourMessages.append(singleMsg)
+                        print("second instance 2")
+                        print(self.selectedUserToChat.uuid)
+
+                    } else {
+                        print("third instance 3")
+                        print(self.selectedUserToChat.uuid)
+
+                        }
                     }
                 }
             }
@@ -91,16 +102,41 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     
-    func getSender() -> String {
-        let resultsRef = Database.database().reference().child("roleModels")
-        resultsRef.queryOrdered(byChild: "uuid").queryEqual(toValue: self.currUserID).observeSingleEvent(of: .childAdded) { (snapshot) in
+    func getSender() -> Void {
+        
+        let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
+        print("https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
+        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+            print("printing response")
+            self.currName = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
+            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
             
-            let values = snapshot.value! as! NSDictionary
-            self.currName = values["name"] as! String
-            print("sender!!!: \(self.currName)")
+
+            
+            let resultsRef = Database.database().reference().child("roleModels")
+            resultsRef.queryOrdered(byChild: "uuid").queryEqual(toValue: self.currUserID)
+                .observeSingleEvent(of: .value) { (snapshot) in
+                    
+                    let values = snapshot.value! as! NSDictionary
+                    print("values print!!!")
+                    print("values!!!: \(values)")
+                    
+                    if values["name"] != nil {
+                        self.currName = values["name"] as! String
+                        print("inside if!")
+                        print("sender!!!: \(self.currName)")
+                    }
+                    print("sender!!!: \(self.currName)")
+                    
+            }
+            print("sender!BOO!!: \(self.currName)")
+
         }
-        print("sender!BOO!!: \(self.currName)")
-        return self.currName
+        
+        task.resume()
+//        return self.currName
+
+        
     }
  
 
@@ -120,17 +156,45 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         var mdata = data
         self.ourMessages = []
         let (receiverID, receiverName) = getReceiver()
-        mdata["senderName"] = getSender()
-         mdata["receiverName"] = receiverName
-//        if let photoURL = Auth.auth().currentUser?.photoURL {
-//            mdata["photoURL"] = photoURL.absoluteString
-//        }
-        mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
-        print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
-        mdata["sentToID"] = receiverID
         
-        // Push data to Firebase Database
-        self.ref.child("messages").childByAutoId().setValue(mdata)
+        let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
+        print("https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
+        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+            print("printing response")
+            
+            self.currName = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
+//            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
+            self.currName = String(self.currName.dropFirst())
+            self.currName = String(self.currName.dropLast())
+//            do {
+//                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+//                let posts = json["name"] as? [[String: Any]] ?? []
+//                print("printing posts")
+//                print(posts)
+//
+//            } catch let error as NSError
+//            {
+//                print(error)
+//            }
+            
+            // print("sender name before save: \(getSender())")
+             mdata["senderName"] = self.currName
+             mdata["receiverName"] = receiverName
+            print("receiver name")
+            print(receiverName)
+            print("receiver name mdata")
+            print(mdata["receiverName"] as String?)
+    //        if let photoURL = Auth.auth().currentUser?.photoURL {
+    //            mdata["photoURL"] = photoURL.absoluteString
+    //        }
+            mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
+            print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
+            mdata["sentToID"] = receiverID
+            
+            // Push data to Firebase Database
+            self.ref.child("messages").childByAutoId().setValue(mdata)
+        }
+        task.resume()
     }
     
     //setup tableview
@@ -144,8 +208,7 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "singleMsgCell", for: indexPath) as! singleMsgCell
         print("ourMessages: TABLEVIEW")
         print(self.ourMessages)
-        cell.setMsgs(messagedUser : self.ourMessages[indexPath.row])
-        
+            cell.setMsgs(messagedUser : self.ourMessages[indexPath.row])
         return cell
     }
     

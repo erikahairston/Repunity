@@ -113,6 +113,8 @@ class Message : Hashable {
             receiveRm.currOccupation = values["currJobTitle"] as! String
             receiveRm.currEmployer = values["currEmployer"] as! String
             receiveRm.relevantGroups = values["supportGroups"] as! String
+            
+            
         }
         return receiveRm
     }

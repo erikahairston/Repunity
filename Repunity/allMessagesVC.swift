@@ -81,25 +81,32 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
                 let text = dict["text"] as? String{
                     
                     let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text)
+                    
                     print("printerNAME: \(singleMsg.senderName)")
-
+                    print("printing sender message: \(singleMsg.text)")
+                    
                     print("printerRRRNAME: \(singleMsg.receiverName)")
 
                     //dont show duplicate ppl i'm talking to
                     if singleMsg.sentByID == self.currUserID {
                         if msgIds.contains(singleMsg.sentToID) {
-                            
+                        
+                            print("im in first if")
                         } else {
                             self.msgdUsers.append(singleMsg)
                             msgIds.append(singleMsg.sentToID)
+                            print("im in first else")
                         }
                     }
                     if singleMsg.sentToID == self.currUserID {
                         if msgIds.contains(singleMsg.sentByID) {
-                            
+                            print("im in second if")
+
                         } else {
                             self.msgdUsers.append(singleMsg)
                             msgIds.append(singleMsg.sentByID)
+                            print("im in second else")
+
                         }
                     }
                 }
@@ -128,7 +135,9 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
         self.chosenUser = msgdUsers[indexPath.row].getReceiverRoleModel()
+        
         print("HHHHHHHH: \(self.chosenUser.uuid)")
         performSegue(withIdentifier: "toSpecificChat", sender: nil)
     }
@@ -148,6 +157,8 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSpecificChat" {
             let destinationVC = segue.destination as! detailMsgVC
+            print(self.chosenUser.uuid)
+            
             destinationVC.selectedUserToChat = self.chosenUser
             print("selectedUserToChat: \(self.chosenUser.name)")
         }

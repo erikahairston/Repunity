@@ -1038,7 +1038,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ryi-s6-h4J"/>
                     <connections>
-                        <outlet property="tableView" destination="lMI-ge-AR9" id="q2g-fj-6dR"/>
+                        <outlet property="tableView" destination="lMI-ge-AR9" id="ith-uP-dLW"/>
                         <segue destination="J8b-xJ-AQQ" kind="show" identifier="toSpecificChat" id="Me3-Xc-mBB"/>
                     </connections>
                 </viewController>
