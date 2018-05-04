@@ -16,6 +16,7 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     //variables
     var topModels = [RoleModel]()
+    var selectedTopModel = RoleModel()
     
     //outlests
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,17 +38,18 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
     //actions
-
+    @IBAction func showAllButtonClicked(_ sender: Any) {
+        //Segue(withIdentifier: "homeToTopResults", sender: nil)
+    }
+    
     
     //functions
-    
     func pickSpotlight(countedRMs : Int) -> Int {
         let diceRoll = Int(arc4random_uniform(UInt32(countedRMs)))
         print("dice roll int: \(countedRMs)")
-        
         return diceRoll
-        
     }
+    
     func observeSpotlight(passedRoleModel : RoleModel) {
         nameLabel.text = passedRoleModel.name
         currJobLabel.text = passedRoleModel.currOccupation
@@ -61,7 +63,11 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     //# of views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return topModels.count
+        if topModels.count == 0 {
+            //TODO: return something cute
+            return 0
+        }
+        return topModels.count
     }
     
     //populate cell views
@@ -69,6 +75,11 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as! topModelCell
         cell.setTopValues(resultRoleModel: topModels[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         selectedTopModel = topModels[indexPath.row]
+        //performSegue(withIdentifier: "toTopRMProPic", sender: nil)
     }
     
     
@@ -172,10 +183,20 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             score = score + 5
         }
         print("score of \(compareRm.name) is \(score)")
-        
-        
         return score
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeToTopResults" {
+            let destinationVC = segue.destination as! resultsVC
+            destinationVC.resultModels = topModels
+            destinationVC.notTopModel = false
+        }
         
+        if segue.identifier == "toTopRMProPic" {
+            let destinationProfVC = segue.destination as! profileViewController
+            destinationProfVC.currRoleModel = self.selectedTopModel
+        }
     }
     
 

@@ -21,6 +21,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var resultModels = [RoleModel]()
     var category = ""
     var selectedResult = RoleModel()
+    var notTopModel : Bool = true
     
             //mock data
    /*  var resultModels = [
@@ -40,7 +41,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("AND THE GAG IS: Category : \(category)")
             observeCatResults()
 
-        } else {
+        } else if (notTopModel) {
              observeResults()
         }
     }

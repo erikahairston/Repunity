@@ -224,24 +224,17 @@
 			children = (
 				033F27412096E107001EAF4D /* Imgs */,
 				0372F350208F8F120045A184 /* AppDelegate.swift */,
+				03823E49209C0380002E6BEC /* Models */,
 				03823E47209C02CD002E6BEC /* ViewControllers */,
-				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
-				03C63B70209A953700EB4446 /* detailMsgVC.swift */,
-				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
-				033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */,
 				03823E3D209B9AD5002E6BEC /* profileViewController.swift */,
 				0370389B2090200100561E06 /* accountVC.swift */,
-				037038A12091150200561E06 /* resultsCell.swift */,
 				0372F352208F8F130045A184 /* homeVC.swift */,
 				0370389D2091029800561E06 /* resultsVC.swift */,
 				0372F354208F8F130045A184 /* discoverVC.swift */,
-				03F704592092655100D44225 /* catCell.swift */,
-				03C76691209955300053AEB8 /* topModelCell.swift */,
-				033F274C2098660C001EAF4D /* ImageService.swift */,
-				03823E49209C0380002E6BEC /* Models */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
 				0372F359208F8F180045A184 /* Assets.xcassets */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
+				033F274C2098660C001EAF4D /* ImageService.swift */,
 				0372F35E208F8F180045A184 /* Info.plist */,
 				0372F382208FC71F0045A184 /* GoogleService-Info.plist */,
 			);
@@ -269,6 +262,7 @@
 		03823E47209C02CD002E6BEC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				03823E57209C4781002E6BEC /* Msg Flow */,
 				03823E48209C02DF002E6BEC /* Login Flow */,
 			);
 			name = ViewControllers;
@@ -289,8 +283,30 @@
 			children = (
 				03C63B76209AA7AD00EB4446 /* Message.swift */,
 				033F273D20966460001EAF4D /* RoleModel.swift */,
+				03823E56209C471C002E6BEC /* Cells */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		03823E56209C471C002E6BEC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */,
+				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
+				037038A12091150200561E06 /* resultsCell.swift */,
+				03C76691209955300053AEB8 /* topModelCell.swift */,
+				03F704592092655100D44225 /* catCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		03823E57209C4781002E6BEC /* Msg Flow */ = {
+			isa = PBXGroup;
+			children = (
+				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
+				03C63B70209A953700EB4446 /* detailMsgVC.swift */,
+			);
+			name = "Msg Flow";
 			sourceTree = "<group>";
 		};
 		4794CEFE9412BE766410D2B2 /* Pods */ = {

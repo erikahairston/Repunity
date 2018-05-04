@@ -19,6 +19,7 @@ class resultsCell: UITableViewCell {
     @IBOutlet weak var collegeLabel: UILabel!
     @IBOutlet weak var currPositionLabel: UILabel!
     @IBOutlet weak var currEmployerLabel: UILabel!
+    @IBOutlet weak var industryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,7 @@ class resultsCell: UITableViewCell {
         collegeLabel.text = resultRoleModel.undergradCollege
         currPositionLabel.text = resultRoleModel.currOccupation
         currEmployerLabel.text = resultRoleModel.currEmployer
+        industryLabel.text = resultRoleModel.industry
         
     }
 

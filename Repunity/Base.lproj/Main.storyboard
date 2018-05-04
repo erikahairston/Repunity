@@ -132,6 +132,7 @@
                                             <outlet property="currIndustry" destination="8Xv-oZ-DtC" id="1Vj-Nl-UlT"/>
                                             <outlet property="myTopImageView" destination="MDl-sn-04e" id="Yvv-Pp-nz7"/>
                                             <outlet property="nameLabel" destination="kCw-dy-A2J" id="2J1-xs-Quw"/>
+                                            <segue destination="yhh-1I-LsB" kind="show" identifier="toTopRMProPic" id="2lb-g0-1lc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -153,6 +154,10 @@
                                 <rect key="frame" x="292" y="90" width="79" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="See All"/>
+                                <connections>
+                                    <action selector="showAllButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cZZ-c0-ICV"/>
+                                    <segue destination="bwf-Mw-XRh" kind="show" identifier="homeToTopResults" id="cjD-aD-A1e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -304,6 +309,7 @@
                                             <outlet property="currEmployerLabel" destination="qlj-wY-KLH" id="tWP-jL-j0B"/>
                                             <outlet property="currPositionLabel" destination="pyr-57-FVG" id="BgG-kv-Dr2"/>
                                             <outlet property="funFactText" destination="CDt-a1-IWZ" id="F8w-gw-HbC"/>
+                                            <outlet property="industryLabel" destination="kuK-1w-vSb" id="Tr7-rU-OzL"/>
                                             <outlet property="nameLabel" destination="45p-B2-Bht" id="0qu-1f-jRj"/>
                                             <outlet property="profileImageView" destination="4a9-y3-owo" id="FAw-0z-HA7"/>
                                         </connections>
@@ -538,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtQ-NR-TJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3565.5999999999999" y="513.19340329835086"/>
+            <point key="canvasLocation" x="3486" y="-227"/>
         </scene>
         <!--Account-->
         <scene sceneID="Lud-NY-mSs">
@@ -1453,6 +1459,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tj4-4M-UZm"/>
-        <segue reference="Me3-Xc-mBB"/>
+        <segue reference="8Jt-Cb-sZc"/>
+        <segue reference="2lb-g0-1lc"/>
+        <segue reference="cjD-aD-A1e"/>
     </inferredMetricsTieBreakers>
 </document>
