@@ -131,7 +131,23 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //setup Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return msgdUsers.count
+        if msgdUsers.count == 0 {
+            //TODO: print something cute like, try messaging RMS
+            return 0
+        } else {
+            return msgdUsers.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.layoutSubviews()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
