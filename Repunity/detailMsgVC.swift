@@ -52,6 +52,8 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         resultsRef.observe(.value, with: { snapshot in
             print("HERE ARE MSGS")
             print(snapshot.value!)
+            self.ourMessages = []
+            
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String: Any],

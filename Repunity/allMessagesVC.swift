@@ -139,21 +139,16 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        self.tableView.layoutSubviews()
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
-        self.chosenUser = msgdUsers[indexPath.row].getReceiverRoleModel()
-        
+      let chosenUserRm = RoleModel()
+        if(msgdUsers[indexPath.row].sentByID == self.currUserID) {
+            chosenUserRm.name = msgdUsers[indexPath.row].receiverName
+            chosenUserRm.uuid = msgdUsers[indexPath.row].sentToID
+        } else {
+            chosenUserRm.name = msgdUsers[indexPath.row].senderName
+            chosenUserRm.uuid = msgdUsers[indexPath.row].sentByID
+        }
+        self.chosenUser = chosenUserRm
         print("HHHHHHHH: \(self.chosenUser.uuid)")
         performSegue(withIdentifier: "toSpecificChat", sender: nil)
     }
