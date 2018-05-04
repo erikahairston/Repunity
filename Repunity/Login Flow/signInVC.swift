@@ -19,19 +19,27 @@ class signInVC: UIViewController {
 
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-
+    @IBOutlet weak var backSignIn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         confirmationPasswordText.isHidden = true
+        backSignIn.isHidden = true
         
     }
 
 
     //actions
-
+    @IBAction func backToSignInClicked(_ sender: Any) {
+        signUpButton.isHidden = false
+        signInButton.setTitle("Sign In", for: .normal)
+        backSignIn.isHidden = true
+        self.viewDidLoad()
+    }
+    
     @IBAction func signInButtonClicked(_ sender: Any) {
         if signInButton.title(for: .normal) == "Sign In" {
             if emailText.text != "" && passwordText.text != "" {
@@ -58,10 +66,12 @@ class signInVC: UIViewController {
 
     }
     
+
     @IBAction func signUpButtonClicked(_ sender: Any) {
         confirmationPasswordText.isHidden = false
         signUpButton.isHidden = true
         signInButton.setTitle("Sign Up", for: .normal)
+        backSignIn.isHidden = false
     }
     //functions
     func performErrorAlert(message: String?) {

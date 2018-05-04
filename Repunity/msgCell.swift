@@ -75,10 +75,9 @@ class msgCell: UITableViewCell {
             
             }
             task.resume()
-        }
-        else {
+        } else {
             nameLabel.text = messagedUser.senderName
-            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentByID).json")
+            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentByID)/photoURL.json")
             
             let task = URLSession.shared.dataTask(with: url!) {
                 (data, response, error) in

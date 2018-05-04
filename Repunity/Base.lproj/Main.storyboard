@@ -695,8 +695,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="8EG-aF-6y7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBH-rm-cBC">
+                                <rect key="frame" x="199" y="429" width="160" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <state key="normal" title="Back to Sign In">
+                                    <color key="titleColor" red="0.15686274510000001" green="0.30588235289999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backToSignInClicked:" destination="RwA-lC-xvw" eventType="touchUpInside" id="Edp-kb-SAc"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvI-WO-Y52">
-                                <rect key="frame" x="89" y="223" width="270" height="30"/>
+                                <rect key="frame" x="89" y="199" width="270" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.61568627450980395" blue="0.58823529411764708" alpha="0.59998394691780821" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -704,7 +721,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxz-mi-ioE">
-                                <rect key="frame" x="89" y="285" width="272" height="30"/>
+                                <rect key="frame" x="87" y="257" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.61568627450980395" blue="0.58823529411764708" alpha="0.59998394691780821" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -712,7 +729,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmH-jW-6Mc">
-                                <rect key="frame" x="89" y="348" width="272" height="30"/>
+                                <rect key="frame" x="87" y="318" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.61568627450980395" blue="0.58823529411764708" alpha="0.59556934931506844" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -720,7 +737,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTE-Ee-qH6">
-                                <rect key="frame" x="169" y="400" width="113" height="53"/>
+                                <rect key="frame" x="167" y="368" width="113" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 <state key="normal" title="Sign In">
@@ -737,7 +754,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mO4-iw-1eV">
-                                <rect key="frame" x="102" y="480" width="231" height="58"/>
+                                <rect key="frame" x="128" y="424" width="231" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up" image="Sign UP Button.png"/>
@@ -761,6 +778,7 @@
                         <viewLayoutGuide key="safeArea" id="CzF-GK-cez"/>
                     </view>
                     <connections>
+                        <outlet property="backSignIn" destination="vBH-rm-cBC" id="0Ek-zt-DdR"/>
                         <outlet property="confirmationPasswordText" destination="qmH-jW-6Mc" id="6Yv-bg-5Ic"/>
                         <outlet property="emailText" destination="xvI-WO-Y52" id="EnA-a0-OLy"/>
                         <outlet property="passwordText" destination="Lxz-mi-ioE" id="pku-Ux-ksf"/>
@@ -891,12 +909,19 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wac-8x-hYT">
-                                <rect key="frame" x="49" y="121" width="288" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wac-8x-hYT">
+                                <rect key="frame" x="49" y="127" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B36-Ar-c8R">
+                                <rect key="frame" x="152" y="98" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1086,6 +1111,13 @@
                                 <rect key="frame" x="136" y="41" width="111" height="111"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.98823529409999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0z-YL-Jcf">
+                                <rect key="frame" x="155" y="121" width="72" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1129,6 +1161,7 @@
                         <viewLayoutGuide key="safeArea" id="z0F-Ri-9cK"/>
                     </view>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="x0z-YL-Jcf" id="Srn-rI-fxy"/>
                         <outlet property="collegeText" destination="cee-bc-ida" id="WLh-VG-HVF"/>
                         <outlet property="currEmployer" destination="csR-aq-rcM" id="UME-uW-IMM"/>
                         <outlet property="currJobTitle" destination="2If-mn-fRE" id="QE9-wM-CaB"/>
@@ -1143,7 +1176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMc-MN-dlj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="1617"/>
+            <point key="canvasLocation" x="1104.8" y="1616.9415292353824"/>
         </scene>
         <!--Messages-->
         <scene sceneID="Evi-jz-Cj9">
@@ -1406,7 +1439,7 @@
         <image name="swuare.png" width="350" height="324"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VrG-JK-ngC"/>
+        <segue reference="Tj4-4M-UZm"/>
         <segue reference="8Jt-Cb-sZc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,7 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var currEmployer: UITextField!
     @IBOutlet weak var supportiveGroups: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var addPhotoLabel: UILabel!
     
     
     //variables
@@ -116,6 +117,7 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.addPhotoLabel.isHidden = true
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -210,9 +212,5 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.ref.child("roleModels").child((Auth.auth().currentUser?.uid)!).setValue(role_model)
         
     }
-    
-    
-    
-    
 
 }

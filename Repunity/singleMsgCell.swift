@@ -34,6 +34,7 @@ class singleMsgCell: UITableViewCell {
         let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentByID)/photoURL.json")
         
         print("print url from setMsgUsers in msgcell \(url)")
+        self.msgText.text = messagedUser.senderName + ": " + messagedUser.text
         let task = URLSession.shared.dataTask(with: url!) {
             (data, response, error) in
             
@@ -44,7 +45,6 @@ class singleMsgCell: UITableViewCell {
             print("printing photourl! \(photoUrl)")
             
             // cell.textLabel?.text = name + ": " + text
-            self.msgText.text = messagedUser.senderName + ": " + messagedUser.text
             print("PHOTO URL in setMSGs insingleMsgCell: \(photoUrl)")
             
             if photoUrl == "" {
@@ -53,7 +53,7 @@ class singleMsgCell: UITableViewCell {
                 ImageService.getImage(withURL: URL.init(string: photoUrl)!) { (image) in
                     self.userPicImageView.image = image
                 }
-        }
+            }
         }
         task.resume()
         }
