@@ -78,9 +78,10 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
                 let senderName = dict["senderName"] as? String,
                 let sentByID = dict["sentByID"] as? String,
                 let sentToID = dict["sentToID"] as? String,
+                let senderPhotoURL = dict["senderPhotoURL"] as? String,
                 let text = dict["text"] as? String{
                     
-                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text)
+                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text, senderPhotoURL:senderPhotoURL)
                     
                     print("printerNAME: \(singleMsg.senderName)")
                     print("printing sender message: \(singleMsg.text)")

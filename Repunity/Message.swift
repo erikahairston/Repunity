@@ -27,13 +27,15 @@ class Message : Hashable {
     
     var sentToID:String
     var text:String
+    var senderPhotoURL:String
     
-    init(receiverName:String, senderName:String, sentByID:String, sentToID:String, text:String) {
+    init(receiverName:String, senderName:String, sentByID:String, sentToID:String, text:String, senderPhotoURL:String) {
         self.receiverName = receiverName
         self.senderName = senderName
         self.sentByID = sentByID
         self.sentToID = sentToID
         self.text = text
+        self.senderPhotoURL = senderPhotoURL
     }
     
     init() {
@@ -42,6 +44,7 @@ class Message : Hashable {
         sentByID = ""
         sentToID = ""
         text = ""
+        senderPhotoURL = ""
     }
     
     //given a message, returns the RoleModel of the sender

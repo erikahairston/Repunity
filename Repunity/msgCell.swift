@@ -58,40 +58,43 @@ class msgCell: UITableViewCell {
     func setMsgUsers(messagedUser: Message) {
         if checkIsCurrSender(messagedUser: messagedUser) {
             nameLabel.text = messagedUser.receiverName
+            self.turnUrlToImg(urlStringl: messagedUser.senderPhotoURL, messagedUser: messagedUser)
             print("IN SET MSG USRE \(messagedUser.sentByID)")
-            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentToID)/photoURL.json")
-            
-            print("print url from setMsgUsers in msgcell \(url)")
-            let task = URLSession.shared.dataTask(with: url!) {
-                (data, response, error) in
-                
-                var photoUrl = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
-                //            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
-                photoUrl = String(photoUrl.dropFirst())
-                photoUrl = String(photoUrl.dropLast())
-                print("printing photourl! \(photoUrl)")
-                
-                self.turnUrlToImg(urlStringl : photoUrl, messagedUser: messagedUser)
-            
-            }
-            task.resume()
+//            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentToID)/photoURL.json")
+//
+//            print("print url from setMsgUsers in msgcell \(url)")
+//            let task = URLSession.shared.dataTask(with: url!) {
+//                (data, response, error) in
+//
+//                var photoUrl = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
+//                //            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
+//                photoUrl = String(photoUrl.dropFirst())
+//                photoUrl = String(photoUrl.dropLast())
+//                print("printing photourl! \(photoUrl)")
+//
+//                self.turnUrlToImg(urlStringl : photoUrl, messagedUser: messagedUser)
+//
+//            }
+//            task.resume()
         } else {
             nameLabel.text = messagedUser.senderName
-            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentByID)/photoURL.json")
-            
-            let task = URLSession.shared.dataTask(with: url!) {
-                (data, response, error) in
-                
-                var photoUrl = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
-                //            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
-                photoUrl = String(photoUrl.dropFirst())
-                photoUrl = String(photoUrl.dropLast())
-                print("printing photourl! \(photoUrl)")
-                
-                self.turnUrlToImg(urlStringl : photoUrl, messagedUser: messagedUser)
-              
-            }
-            task.resume()
+            self.turnUrlToImg(urlStringl: messagedUser.senderPhotoURL, messagedUser: messagedUser)
+
+//            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentByID)/photoURL.json")
+//
+//            let task = URLSession.shared.dataTask(with: url!) {
+//                (data, response, error) in
+//
+//                var photoUrl = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
+//                //            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
+//                photoUrl = String(photoUrl.dropFirst())
+//                photoUrl = String(photoUrl.dropLast())
+//                print("printing photourl! \(photoUrl)")
+//
+//                self.turnUrlToImg(urlStringl : photoUrl, messagedUser: messagedUser)
+//
+//            }
+//            task.resume()
         }
     }
 

@@ -53,7 +53,6 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             print("HERE ARE MSGS")
             print(snapshot.value!)
             self.ourMessages = []
-            
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String: Any],
@@ -61,9 +60,10 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     let senderName = dict["senderName"] as? String,
                     let sentByID = dict["sentByID"] as? String,
                     let sentToID = dict["sentToID"] as? String,
+                    let senderPhotoURL = dict["senderPhotoURL"] as? String,
                     let text = dict["text"] as? String{
                     
-                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text)
+                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text, senderPhotoURL:senderPhotoURL)
                     print(singleMsg.senderName)
                     
                     //only show msgs between the curr and selected users
@@ -184,9 +184,13 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             print(receiverName)
             print("receiver name mdata")
             print(mdata["receiverName"] as String?)
+            print("trying to get photoURL from auth")
+            print(Auth.auth().currentUser?.photoURL)
             if let photoURL = Auth.auth().currentUser?.photoURL {
                 mdata["senderPhotoURL"] = photoURL.absoluteString
             }
+            print("mdataSenderPhotoURL")
+            print(mdata["senderPhotoURL"])
             mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
             print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
             mdata["sentToID"] = receiverID
