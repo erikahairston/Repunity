@@ -18,7 +18,6 @@ class signInVC: UIViewController {
     @IBOutlet weak var confirmationPasswordText: UITextField!
 
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
 
     
@@ -32,10 +31,7 @@ class signInVC: UIViewController {
 
 
     //actions
-    @IBAction func skipButtonClicked(_ sender: Any) {
-       self.performSegue(withIdentifier: "toHomeTab", sender: nil)
-    }
-    
+
     @IBAction func signInButtonClicked(_ sender: Any) {
         if signInButton.title(for: .normal) == "Sign In" {
             if emailText.text != "" && passwordText.text != "" {
@@ -58,7 +54,6 @@ class signInVC: UIViewController {
         } else {
             createAccount()
             
-            
         }
 
     }
@@ -66,7 +61,6 @@ class signInVC: UIViewController {
     @IBAction func signUpButtonClicked(_ sender: Any) {
         confirmationPasswordText.isHidden = false
         signUpButton.isHidden = true
-        skipButton.isHidden = true
         signInButton.setTitle("Sign Up", for: .normal)
     }
     //functions

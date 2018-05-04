@@ -180,7 +180,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultToProfile" {
             let destinationVC = segue.destination as! profileViewController
-            destinationVC.currRoleMOdel = selectedResult
+            destinationVC.currRoleModel = selectedResult
         }
     }
     //actions

@@ -12,7 +12,7 @@ import UIKit
 class profileViewController: UIViewController {
 
     //variables
-    var currRoleMOdel = RoleModel()
+    var currRoleModel = RoleModel()
     
     //outlets
     @IBOutlet weak var profileImageView: UIImageView!
@@ -28,16 +28,16 @@ class profileViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
         profileImageView.clipsToBounds = true
         
-        if currRoleMOdel != nil {
-            nameLabel.text = currRoleMOdel.name
-            ImageService.getImage(withURL: currRoleMOdel.imgURL) { (image) in
+        if currRoleModel != nil {
+            nameLabel.text = currRoleModel.name
+            ImageService.getImage(withURL: currRoleModel.imgURL) { (image) in
                 self.profileImageView.image = image
             }
-            funFactLabel.text = currRoleMOdel.funFact
-            collegeLabel.text = currRoleMOdel.undergradCollege
-            industryLabel.text = currRoleMOdel.industry
-            majorLabel.text = currRoleMOdel.primaryMajor
-            supportiveGroupsLabel.text = currRoleMOdel.relevantGroups
+            funFactLabel.text = currRoleModel.funFact
+            collegeLabel.text = currRoleModel.undergradCollege
+            industryLabel.text = currRoleModel.industry
+            majorLabel.text = currRoleModel.primaryMajor
+            supportiveGroupsLabel.text = currRoleModel.relevantGroups
         }
 
 
@@ -51,7 +51,7 @@ class profileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "profileToChat" {
             let destinationVC = segue.destination as! detailMsgVC
-            destinationVC.selectedUserToChat = currRoleMOdel
+            destinationVC.selectedUserToChat = currRoleModel
         }
     }
     

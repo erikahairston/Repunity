@@ -16,8 +16,6 @@ class topModelCell: UICollectionViewCell {
     @IBOutlet weak var myTopImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var currPositionLabel: UILabel!
-    @IBOutlet weak var currEmployerLabel: UILabel!
     @IBOutlet weak var currIndustry: UILabel!
     
     func setTopValues(resultRoleModel: RoleModel){
@@ -25,8 +23,10 @@ class topModelCell: UICollectionViewCell {
         ImageService.getImage(withURL: resultRoleModel.imgURL) { (image) in
             self.myTopImageView.image = image
         }
-        currPositionLabel.text = resultRoleModel.currOccupation
-        currEmployerLabel.text = resultRoleModel.currEmployer
+       // myTopImageView.layer.cornerRadius = myTopImageView.bounds.height / 4
+        myTopImageView.clipsToBounds = true
+       currIndustry.text = resultRoleModel.industry
+        //currEmployerLabel.text = resultRoleModel.currEmployer
         
     }
 }

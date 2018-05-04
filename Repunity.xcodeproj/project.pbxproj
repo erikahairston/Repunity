@@ -58,6 +58,13 @@
 		03823E3E209B9AD5002E6BEC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E3D209B9AD5002E6BEC /* profileViewController.swift */; };
 		03823E3F209B9AD5002E6BEC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E3D209B9AD5002E6BEC /* profileViewController.swift */; };
 		03823E40209B9AD5002E6BEC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E3D209B9AD5002E6BEC /* profileViewController.swift */; };
+		03823E42209BEB95002E6BEC /* swuare.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E41209BEB94002E6BEC /* swuare.png */; };
+		03823E44209BFE51002E6BEC /* amy-velazquez-562387-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03823E43209BFE50002E6BEC /* amy-velazquez-562387-unsplash.jpg */; };
+		03823E46209BFEAA002E6BEC /* schalk-neethling-592618-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03823E45209BFEA9002E6BEC /* schalk-neethling-592618-unsplash.jpg */; };
+		03823E4D209C050D002E6BEC /* Sign UP Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E4C209C050D002E6BEC /* Sign UP Button.png */; };
+		03823E51209C1F32002E6BEC /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E50209C1F31002E6BEC /* signin.png */; };
+		03823E53209C2449002E6BEC /* launchWithDescript.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E52209C2448002E6BEC /* launchWithDescript.png */; };
+		03823E55209C24A2002E6BEC /* signInBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E54209C24A2002E6BEC /* signInBack.png */; };
 		03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
 		03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
 		03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
@@ -122,6 +129,13 @@
 		0372F380208FAE160045A184 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		0372F382208FC71F0045A184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03823E3D209B9AD5002E6BEC /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		03823E41209BEB94002E6BEC /* swuare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swuare.png; sourceTree = "<group>"; };
+		03823E43209BFE50002E6BEC /* amy-velazquez-562387-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "amy-velazquez-562387-unsplash.jpg"; sourceTree = "<group>"; };
+		03823E45209BFEA9002E6BEC /* schalk-neethling-592618-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "schalk-neethling-592618-unsplash.jpg"; sourceTree = "<group>"; };
+		03823E4C209C050D002E6BEC /* Sign UP Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sign UP Button.png"; sourceTree = "<group>"; };
+		03823E50209C1F31002E6BEC /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin.png; sourceTree = "<group>"; };
+		03823E52209C2448002E6BEC /* launchWithDescript.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchWithDescript.png; sourceTree = "<group>"; };
+		03823E54209C24A2002E6BEC /* signInBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signInBack.png; sourceTree = "<group>"; };
 		03C63B68209A818C00EB4446 /* allMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allMessagesVC.swift; sourceTree = "<group>"; };
 		03C63B6C209A8D6400EB4446 /* msgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msgCell.swift; sourceTree = "<group>"; };
 		03C63B70209A953700EB4446 /* detailMsgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailMsgVC.swift; sourceTree = "<group>"; };
@@ -170,8 +184,15 @@
 		033F27412096E107001EAF4D /* Imgs */ = {
 			isa = PBXGroup;
 			children = (
+				03823E41209BEB94002E6BEC /* swuare.png */,
+				03823E43209BFE50002E6BEC /* amy-velazquez-562387-unsplash.jpg */,
 				033F274A2097AA9A001EAF4D /* icons8-female-profile-filled-100.png */,
+				03823E45209BFEA9002E6BEC /* schalk-neethling-592618-unsplash.jpg */,
+				03823E52209C2448002E6BEC /* launchWithDescript.png */,
+				03823E54209C24A2002E6BEC /* signInBack.png */,
+				03823E50209C1F31002E6BEC /* signin.png */,
 				033F27422096E125001EAF4D /* square.png */,
+				03823E4C209C050D002E6BEC /* Sign UP Button.png */,
 			);
 			path = Imgs;
 			sourceTree = "<group>";
@@ -203,24 +224,21 @@
 			children = (
 				033F27412096E107001EAF4D /* Imgs */,
 				0372F350208F8F120045A184 /* AppDelegate.swift */,
+				03823E47209C02CD002E6BEC /* ViewControllers */,
 				03C63B68209A818C00EB4446 /* allMessagesVC.swift */,
 				03C63B70209A953700EB4446 /* detailMsgVC.swift */,
+				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
+				033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */,
 				03823E3D209B9AD5002E6BEC /* profileViewController.swift */,
+				0370389B2090200100561E06 /* accountVC.swift */,
 				037038A12091150200561E06 /* resultsCell.swift */,
 				0372F352208F8F130045A184 /* homeVC.swift */,
 				0370389D2091029800561E06 /* resultsVC.swift */,
-				033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */,
-				0372F380208FAE160045A184 /* signInVC.swift */,
-				03703897208FD15300561E06 /* signUpVC.swift */,
-				033F274420977161001EAF4D /* part2SignUpVC.swift */,
-				0370389B2090200100561E06 /* accountVC.swift */,
 				0372F354208F8F130045A184 /* discoverVC.swift */,
 				03F704592092655100D44225 /* catCell.swift */,
 				03C76691209955300053AEB8 /* topModelCell.swift */,
-				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
 				033F274C2098660C001EAF4D /* ImageService.swift */,
-				03C63B76209AA7AD00EB4446 /* Message.swift */,
-				033F273D20966460001EAF4D /* RoleModel.swift */,
+				03823E49209C0380002E6BEC /* Models */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
 				0372F359208F8F180045A184 /* Assets.xcassets */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
@@ -246,6 +264,33 @@
 				0372F374208F8F180045A184 /* Info.plist */,
 			);
 			path = RepunityUITests;
+			sourceTree = "<group>";
+		};
+		03823E47209C02CD002E6BEC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				03823E48209C02DF002E6BEC /* Login Flow */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03823E48209C02DF002E6BEC /* Login Flow */ = {
+			isa = PBXGroup;
+			children = (
+				0372F380208FAE160045A184 /* signInVC.swift */,
+				03703897208FD15300561E06 /* signUpVC.swift */,
+				033F274420977161001EAF4D /* part2SignUpVC.swift */,
+			);
+			path = "Login Flow";
+			sourceTree = "<group>";
+		};
+		03823E49209C0380002E6BEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				03C63B76209AA7AD00EB4446 /* Message.swift */,
+				033F273D20966460001EAF4D /* RoleModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		4794CEFE9412BE766410D2B2 /* Pods */ = {
@@ -379,11 +424,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03823E55209C24A2002E6BEC /* signInBack.png in Resources */,
+				03823E51209C1F32002E6BEC /* signin.png in Resources */,
 				0372F35D208F8F180045A184 /* LaunchScreen.storyboard in Resources */,
+				03823E42209BEB95002E6BEC /* swuare.png in Resources */,
 				0372F35A208F8F180045A184 /* Assets.xcassets in Resources */,
+				03823E53209C2449002E6BEC /* launchWithDescript.png in Resources */,
+				03823E4D209C050D002E6BEC /* Sign UP Button.png in Resources */,
 				033F27432096E125001EAF4D /* square.png in Resources */,
 				0372F358208F8F130045A184 /* Main.storyboard in Resources */,
+				03823E46209BFEAA002E6BEC /* schalk-neethling-592618-unsplash.jpg in Resources */,
 				0372F383208FC71F0045A184 /* GoogleService-Info.plist in Resources */,
+				03823E44209BFE51002E6BEC /* amy-velazquez-562387-unsplash.jpg in Resources */,
 				033F274B2097AA9B001EAF4D /* icons8-female-profile-filled-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
