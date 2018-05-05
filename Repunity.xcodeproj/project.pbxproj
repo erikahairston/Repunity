@@ -31,7 +31,6 @@
 		0372F353208F8F130045A184 /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F352208F8F130045A184 /* homeVC.swift */; };
 		0372F355208F8F130045A184 /* discoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F354208F8F130045A184 /* discoverVC.swift */; };
 		0372F358208F8F130045A184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0372F356208F8F130045A184 /* Main.storyboard */; };
-		0372F35A208F8F180045A184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0372F359208F8F180045A184 /* Assets.xcassets */; };
 		0372F35D208F8F180045A184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0372F35B208F8F180045A184 /* LaunchScreen.storyboard */; };
 		0372F368208F8F180045A184 /* RepunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F367208F8F180045A184 /* RepunityTests.swift */; };
 		0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372F372208F8F180045A184 /* RepunityUITests.swift */; };
@@ -59,15 +58,19 @@
 		03823E3F209B9AD5002E6BEC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E3D209B9AD5002E6BEC /* profileViewController.swift */; };
 		03823E40209B9AD5002E6BEC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E3D209B9AD5002E6BEC /* profileViewController.swift */; };
 		03823E42209BEB95002E6BEC /* swuare.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E41209BEB94002E6BEC /* swuare.png */; };
-		03823E44209BFE51002E6BEC /* amy-velazquez-562387-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03823E43209BFE50002E6BEC /* amy-velazquez-562387-unsplash.jpg */; };
-		03823E46209BFEAA002E6BEC /* schalk-neethling-592618-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03823E45209BFEA9002E6BEC /* schalk-neethling-592618-unsplash.jpg */; };
-		03823E4D209C050D002E6BEC /* Sign UP Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E4C209C050D002E6BEC /* Sign UP Button.png */; };
+		03823E44209BFE51002E6BEC /* pinkwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03823E43209BFE50002E6BEC /* pinkwall.jpg */; };
+		03823E46209BFEAA002E6BEC /* cloud_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03823E45209BFEA9002E6BEC /* cloud_cover.jpg */; };
 		03823E51209C1F32002E6BEC /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E50209C1F31002E6BEC /* signin.png */; };
 		03823E53209C2449002E6BEC /* launchWithDescript.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E52209C2448002E6BEC /* launchWithDescript.png */; };
 		03823E55209C24A2002E6BEC /* signInBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E54209C24A2002E6BEC /* signInBack.png */; };
 		03823E59209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */; };
 		03823E5A209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */; };
 		03823E5B209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */; };
+		039F99F8209DA52D00339479 /* nathan-anderson-109933-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F99F7209DA52C00339479 /* nathan-anderson-109933-unsplash.jpg */; };
+		039F99FA209DA76400339479 /* kelli-tungay-324329-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F99F9209DA76300339479 /* kelli-tungay-324329-unsplash.jpg */; };
+		039F99FC209DA76D00339479 /* red_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F99FB209DA76C00339479 /* red_cover.jpg */; };
+		039F99FE209DA77500339479 /* yellow_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F99FD209DA77300339479 /* yellow_cover.jpg */; };
+		039F9A00209DAA0000339479 /* blue_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F99FF209DAA0000339479 /* blue_cover.jpg */; };
 		03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
 		03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
 		03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
@@ -81,6 +84,7 @@
 		03C63B7A209ACE0000EB4446 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
 		03C63B7B209ACE0000EB4446 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
 		03C76692209955310053AEB8 /* topModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C76691209955300053AEB8 /* topModelCell.swift */; };
+		03F432DD209DBBCF006E72AD /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F432DC209DBBCF006E72AD /* Assests.xcassets */; };
 		03F7045A2092655100D44225 /* catCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F704592092655100D44225 /* catCell.swift */; };
 		33CD3DB9FB46361FE68F53CC /* Pods_RepunityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD671A5921B0BD55DA60E3 /* Pods_RepunityUITests.framework */; };
 		9AD7E05E84B1F33CA412C998 /* Pods_Repunity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B44D2CFC89C4C9529EF0D12 /* Pods_Repunity.framework */; };
@@ -120,7 +124,6 @@
 		0372F352208F8F130045A184 /* homeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		0372F354208F8F130045A184 /* discoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = discoverVC.swift; sourceTree = "<group>"; };
 		0372F357208F8F130045A184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0372F359208F8F180045A184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0372F35C208F8F180045A184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0372F35E208F8F180045A184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0372F363208F8F180045A184 /* RepunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepunityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,18 +136,23 @@
 		0372F382208FC71F0045A184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03823E3D209B9AD5002E6BEC /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		03823E41209BEB94002E6BEC /* swuare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swuare.png; sourceTree = "<group>"; };
-		03823E43209BFE50002E6BEC /* amy-velazquez-562387-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "amy-velazquez-562387-unsplash.jpg"; sourceTree = "<group>"; };
-		03823E45209BFEA9002E6BEC /* schalk-neethling-592618-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "schalk-neethling-592618-unsplash.jpg"; sourceTree = "<group>"; };
-		03823E4C209C050D002E6BEC /* Sign UP Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sign UP Button.png"; sourceTree = "<group>"; };
+		03823E43209BFE50002E6BEC /* pinkwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pinkwall.jpg; sourceTree = "<group>"; };
+		03823E45209BFEA9002E6BEC /* cloud_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloud_cover.jpg; sourceTree = "<group>"; };
 		03823E50209C1F31002E6BEC /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin.png; sourceTree = "<group>"; };
 		03823E52209C2448002E6BEC /* launchWithDescript.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchWithDescript.png; sourceTree = "<group>"; };
 		03823E54209C24A2002E6BEC /* signInBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signInBack.png; sourceTree = "<group>"; };
 		03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = industrySignUpViewController.swift; sourceTree = "<group>"; };
+		039F99F7209DA52C00339479 /* nathan-anderson-109933-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nathan-anderson-109933-unsplash.jpg"; sourceTree = "<group>"; };
+		039F99F9209DA76300339479 /* kelli-tungay-324329-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kelli-tungay-324329-unsplash.jpg"; sourceTree = "<group>"; };
+		039F99FB209DA76C00339479 /* red_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red_cover.jpg; sourceTree = "<group>"; };
+		039F99FD209DA77300339479 /* yellow_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellow_cover.jpg; sourceTree = "<group>"; };
+		039F99FF209DAA0000339479 /* blue_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue_cover.jpg; sourceTree = "<group>"; };
 		03C63B68209A818C00EB4446 /* allMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allMessagesVC.swift; sourceTree = "<group>"; };
 		03C63B6C209A8D6400EB4446 /* msgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msgCell.swift; sourceTree = "<group>"; };
 		03C63B70209A953700EB4446 /* detailMsgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailMsgVC.swift; sourceTree = "<group>"; };
 		03C63B76209AA7AD00EB4446 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		03C76691209955300053AEB8 /* topModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topModelCell.swift; sourceTree = "<group>"; };
+		03F432DC209DBBCF006E72AD /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assests.xcassets; sourceTree = "<group>"; };
 		03F704592092655100D44225 /* catCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catCell.swift; sourceTree = "<group>"; };
 		0FC56F2A7A697F828EF753F3 /* Pods-RepunityUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepunityUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepunityUITests/Pods-RepunityUITests.release.xcconfig"; sourceTree = "<group>"; };
 		144A9B7532D5A69DA4CB796F /* Pods_RepunityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RepunityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,14 +197,18 @@
 			isa = PBXGroup;
 			children = (
 				03823E41209BEB94002E6BEC /* swuare.png */,
-				03823E43209BFE50002E6BEC /* amy-velazquez-562387-unsplash.jpg */,
+				039F99F9209DA76300339479 /* kelli-tungay-324329-unsplash.jpg */,
+				03823E43209BFE50002E6BEC /* pinkwall.jpg */,
 				033F274A2097AA9A001EAF4D /* icons8-female-profile-filled-100.png */,
-				03823E45209BFEA9002E6BEC /* schalk-neethling-592618-unsplash.jpg */,
+				03823E45209BFEA9002E6BEC /* cloud_cover.jpg */,
+				039F99FB209DA76C00339479 /* red_cover.jpg */,
 				03823E52209C2448002E6BEC /* launchWithDescript.png */,
+				039F99FD209DA77300339479 /* yellow_cover.jpg */,
 				03823E54209C24A2002E6BEC /* signInBack.png */,
 				03823E50209C1F31002E6BEC /* signin.png */,
+				039F99F7209DA52C00339479 /* nathan-anderson-109933-unsplash.jpg */,
+				039F99FF209DAA0000339479 /* blue_cover.jpg */,
 				033F27422096E125001EAF4D /* square.png */,
-				03823E4C209C050D002E6BEC /* Sign UP Button.png */,
 			);
 			path = Imgs;
 			sourceTree = "<group>";
@@ -204,6 +216,7 @@
 		0372F344208F8F120045A184 = {
 			isa = PBXGroup;
 			children = (
+				03F432DC209DBBCF006E72AD /* Assests.xcassets */,
 				0372F34F208F8F120045A184 /* Repunity */,
 				0372F366208F8F180045A184 /* RepunityTests */,
 				0372F371208F8F180045A184 /* RepunityUITests */,
@@ -236,7 +249,6 @@
 				0370389D2091029800561E06 /* resultsVC.swift */,
 				0372F354208F8F130045A184 /* discoverVC.swift */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
-				0372F359208F8F180045A184 /* Assets.xcassets */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
 				033F274C2098660C001EAF4D /* ImageService.swift */,
 				0372F35E208F8F180045A184 /* Info.plist */,
@@ -445,18 +457,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039F99F8209DA52D00339479 /* nathan-anderson-109933-unsplash.jpg in Resources */,
+				039F99FE209DA77500339479 /* yellow_cover.jpg in Resources */,
 				03823E55209C24A2002E6BEC /* signInBack.png in Resources */,
 				03823E51209C1F32002E6BEC /* signin.png in Resources */,
 				0372F35D208F8F180045A184 /* LaunchScreen.storyboard in Resources */,
 				03823E42209BEB95002E6BEC /* swuare.png in Resources */,
-				0372F35A208F8F180045A184 /* Assets.xcassets in Resources */,
+				039F99FA209DA76400339479 /* kelli-tungay-324329-unsplash.jpg in Resources */,
 				03823E53209C2449002E6BEC /* launchWithDescript.png in Resources */,
-				03823E4D209C050D002E6BEC /* Sign UP Button.png in Resources */,
 				033F27432096E125001EAF4D /* square.png in Resources */,
+				03F432DD209DBBCF006E72AD /* Assests.xcassets in Resources */,
+				039F99FC209DA76D00339479 /* red_cover.jpg in Resources */,
 				0372F358208F8F130045A184 /* Main.storyboard in Resources */,
-				03823E46209BFEAA002E6BEC /* schalk-neethling-592618-unsplash.jpg in Resources */,
+				03823E46209BFEAA002E6BEC /* cloud_cover.jpg in Resources */,
+				039F9A00209DAA0000339479 /* blue_cover.jpg in Resources */,
 				0372F383208FC71F0045A184 /* GoogleService-Info.plist in Resources */,
-				03823E44209BFE51002E6BEC /* amy-velazquez-562387-unsplash.jpg in Resources */,
+				03823E44209BFE51002E6BEC /* pinkwall.jpg in Resources */,
 				033F274B2097AA9B001EAF4D /* icons8-female-profile-filled-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,6 @@ class topModelCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var currIndustry: UILabel!
-    @IBOutlet weak var imgContainerView: UIView!
     @IBOutlet weak var inCommonText: UILabel!
     
     func setTopValues(resultRoleModel: RoleModel){
@@ -25,8 +24,8 @@ class topModelCell: UICollectionViewCell {
         ImageService.getImage(withURL: resultRoleModel.imgURL) { (image) in
             self.myTopImageView.image = image
         }
-       myTopImageView.layer.cornerRadius = myTopImageView.bounds.height / 4
-         myTopImageView.layer.masksToBounds = true
+       //myTopImageView.layer.cornerRadius = myTopImageView.bounds.height / 4
+         //myTopImageView.layer.masksToBounds = true
         //imgContainerView!.layer.cornerRadius = 10
         //imgContainerView!.layer.masksToBounds = true
 

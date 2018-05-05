@@ -18,10 +18,10 @@ class profileViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var industryLabel: UILabel!
-    @IBOutlet weak var collegeLabel: UILabel!
-    @IBOutlet weak var majorLabel: UILabel!
-    @IBOutlet weak var supportiveGroupsLabel: UILabel!
     @IBOutlet weak var funFactLabel: UILabel!
+    @IBOutlet weak var jobAtCompanyLabel: UILabel!
+    @IBOutlet weak var majorAtSchoolLabel: UILabel!
+    @IBOutlet weak var supportGroups: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +33,11 @@ class profileViewController: UIViewController {
             ImageService.getImage(withURL: currRoleModel.imgURL) { (image) in
                 self.profileImageView.image = image
             }
-            funFactLabel.text = currRoleModel.funFact
-            collegeLabel.text = currRoleModel.undergradCollege
-            industryLabel.text = currRoleModel.industry
-            majorLabel.text = currRoleModel.primaryMajor
-            supportiveGroupsLabel.text = currRoleModel.relevantGroups
+            funFactLabel.text = "\"" + currRoleModel.funFact + "\""
+            industryLabel.text = "In the " + currRoleModel.industry + " Industry"
+            supportGroups.text = currRoleModel.relevantGroups
+            jobAtCompanyLabel.text = currRoleModel.currOccupation + " at " + currRoleModel.currEmployer
+            majorAtSchoolLabel.text =  currRoleModel.primaryMajor + " major at " + currRoleModel.undergradCollege
         }
 
 

@@ -78,6 +78,8 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let currTM = topModels[indexPath.row]
         cell.setTopValues(resultRoleModel: currTM)
         cell.inCommonText.text = "Match Score:" + String(rmsWithScores[currTM]! )
+        cell.layer.masksToBounds = true;
+        cell.layer.cornerRadius = 3
         return cell
     }
     
