@@ -15,8 +15,9 @@ import UIKit
 class catCell: UICollectionViewCell {
     
     @IBOutlet weak var catButton: UIButton!
-    @IBOutlet weak var catCellView: UILabel!
-   
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var industryLabel: UILabel!
+    
     @IBAction func catButtonPressed(_ sender: Any) {
         
         print("success")

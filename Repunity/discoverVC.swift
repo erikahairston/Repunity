@@ -12,9 +12,12 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     //vars
     let ids : [String] = ["Black", "Latinx", "Native", "Asian", "Women", "Men", "Non-Binary", "Trans*", "LGBTQ", "firstGen"]
-    let industries :  [String] = ["Tech", "Government", "Art", "Education"]
-    let catNames : [String] = ["Black in Tech", "Latinx in Art", "Women in Politics", "LGBTQ in Tech", "firstGen in Art", "Non-Binary in Tech"]
+    let industries :  [String] = ["Architecture", "Communitications", "Consulting", "Education", "Energy", "Entertainment", "Environment", "Finance", "Fine Arts", "Government", "Healthcare", "Law" ,"Publishing/Media", "Religious-Instituion",  "Retail", "Social Work", "Technology", "Executive"]
+
     var chosenCat = ""
+    var catNames = [String]()
+    var newIdArray = [String]()
+    var newIndArray = [String]()
     
     
     //outlets
@@ -22,12 +25,24 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        catNames = createCatNames(from : ids, to : industries )
        
     }
     
     //actions
     
     //functions
+    func createCatNames(from: [String], to: [String]) -> [String] {
+        for id in ids {
+            for industry in industries {
+                catNames.append("\(id) in \(industry)")
+                newIndArray.append(industry)
+                newIdArray.append(id)
+            }
+            
+        }
+        return catNames
+    }
     
     //setup number of collection views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,10 +50,8 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     @objc func catPressed(sender:UIButton) {
-        
         chosenCat = catNames[sender.tag]
         performSegue(withIdentifier: "toDiscoverResults", sender: nil)
-        
     }
 
     
@@ -46,7 +59,9 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "catCell", for: indexPath) as! catCell
         
-        cell.catButton.setTitle(catNames[indexPath.row], for: .normal)
+        //cell.catButton.setTitle(catNames[indexPath.row], for: .normal)
+        cell.idLabel.text = newIdArray[indexPath.row]
+        cell.industryLabel.text = newIndArray[indexPath.row]
         cell.catButton.tag = indexPath.row
         cell.catButton.addTarget(self, action: #selector(catPressed), for: .touchUpInside)
         
@@ -57,7 +72,7 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         if segue.identifier == "toDiscoverResults" {
             let catResultsVC = segue.destination as! resultsVC
             catResultsVC.category = chosenCat
-            
+
         }
     }
     

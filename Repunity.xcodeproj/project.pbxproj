@@ -296,11 +296,11 @@
 		03823E56209C471C002E6BEC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				03F704592092655100D44225 /* catCell.swift */,
 				033DEEA4209B131000D0FCE8 /* singleMsgCell.swift */,
 				03C63B6C209A8D6400EB4446 /* msgCell.swift */,
 				037038A12091150200561E06 /* resultsCell.swift */,
 				03C76691209955300053AEB8 /* topModelCell.swift */,
-				03F704592092655100D44225 /* catCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";

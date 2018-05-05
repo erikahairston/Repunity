@@ -23,13 +23,6 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var selectedResult = RoleModel()
     var notTopModel : Bool = true
     
-            //mock data
-   /*  var resultModels = [
-        RoleModel(name: "Scott", img: "", funFact: "I Love Pizza almost as much as my amazing gf", race: "Black", gender: "Male", isLGBTQ: false, isFirstGen: false, undergradCollege: "NYIT", primaryMajor: "CompSci", gradYear: "2017", industry: "tech", currOccupation: "SWE", currEmployer: "Snap", relevantGroups: "NSBE, BlackValley, Code2040"),
-         RoleModel(name: "Erika", img: "", funFact: "Santa is Great and I believed in him until i was 13", race: "Black", gender: "Female", isLGBTQ: false, isFirstGen: false, undergradCollege: "Yale", primaryMajor: "CompSci", gradYear: "2018", industry: "tech", currOccupation: "APM", currEmployer: "LinkedIn", relevantGroups: "Black Tech Women, BlackValley")
-    
-    ] */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +53,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let (resultId, resultIndustry) = getIdInd()
         
         if possModel.industry == resultIndustry {
+            print("possIND: \(possModel.industry) , resultIND: \(resultIndustry)")
             if possModel.race == resultId {
                 return true
             } else if possModel.gender == resultId {

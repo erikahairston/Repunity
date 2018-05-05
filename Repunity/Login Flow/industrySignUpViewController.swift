@@ -30,7 +30,7 @@ class industrySignUpViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        industryNames = ["Architecture", "Communitications", "Consulting", "Education", "Energy", "Entertainment", "Environment", "Finance", "Fine Arts", "Government", "Healthcare", "Law" ,"Publishing/Media", "Religious Instituion",  "Retail", "Social Work", "Technology", "Executive"]
+        industryNames = ["Architecture", "Communitications", "Consulting", "Education", "Energy", "Entertainment", "Environment", "Finance", "Fine-Arts", "Government", "Healthcare", "Law" ,"Publishing/Media", "Religious-Instituion",  "Retail", "Social-Work", "Technology", "Executive"]
         
         popUpView!.layer.cornerRadius = 10
         popUpView!.layer.masksToBounds = true

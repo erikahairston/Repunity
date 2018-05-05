@@ -32,6 +32,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageTitile: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,23 +121,15 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
 
-        
-//
-//        // Unpack message from Firebase DataSnapshot
-//        guard let message = messageSnapshot.value as? [String: String] else { return cell }
-//        let name = message["name"]
-//        let text = message["text"]
-//        cell.textLabel?.text = name! + ": " + text!
-//        cell.imageView?.image = UIImage(named: "icons8-female-profile-filled-100")
-        
-
     
     //setup Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if msgdUsers.count == 0 {
-            //TODO: print something cute like, try messaging RMS
+            //TODO: print something cute like, try messaging
+            messageTitile.text = "You have no conversations"
             return 0
         } else {
+            messageTitile.text = "Messages"
             return msgdUsers.count
         }
     }
