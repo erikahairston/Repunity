@@ -716,7 +716,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0P2-dR-QhR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="Hkz-Ec-wmm"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="accountIcon" landscapeImage="accountIcon" largeContentSizeImage="accountIcon" id="Hkz-Ec-wmm"/>
                     <connections>
                         <outlet property="collegeMajor" destination="Apw-aH-t42" id="qfY-AS-yS0"/>
                         <outlet property="funFactLabel" destination="gi9-vF-INQ" id="4Ls-9P-qpV"/>
@@ -1490,11 +1490,11 @@
             </objects>
             <point key="canvasLocation" x="358" y="37"/>
         </scene>
-        <!--Discover-->
+        <!--Discovery-->
         <scene sceneID="fTe-yw-o6v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nDc-Ls-IbN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Discovery" image="light_bulb" landscapeImage="light_bulb" largeContentSizeImage="light_bulb" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jZn-aG-y6J">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1530,13 +1530,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="accountIcon" width="24" height="24"/>
         <image name="blue_cover.jpg" width="6016" height="4016"/>
         <image name="cloud_cover.jpg" width="4564" height="3043"/>
         <image name="home" width="24" height="24"/>
         <image name="icons8-female-profile-filled-100.png" width="100" height="100"/>
         <image name="icons8-female-profile-filled-50" width="50" height="50"/>
+        <image name="light_bulb" width="24" height="24"/>
         <image name="messages" width="24" height="24"/>
-        <image name="second" width="30" height="30"/>
         <image name="signInBack.png" width="375" height="667"/>
         <image name="swuare.png" width="350" height="324"/>
     </resources>
@@ -1544,6 +1545,6 @@
         <segue reference="VrG-JK-ngC"/>
         <segue reference="Me3-Xc-mBB"/>
         <segue reference="cnI-0J-1ga"/>
-        <segue reference="cjD-aD-A1e"/>
+        <segue reference="Ukk-kZ-UrS"/>
     </inferredMetricsTieBreakers>
 </document>
