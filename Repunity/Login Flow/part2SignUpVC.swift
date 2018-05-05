@@ -25,6 +25,7 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var supportiveGroups: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var primaryIndustryText: UILabel!
+    @IBOutlet weak var completeButton: UIButton!
     
     
     //variables
@@ -52,7 +53,13 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.currJobTitle.delegate = self
         self.currEmployer.delegate = self
         self.supportiveGroups.delegate = self
-        
+        completeButton.isEnabled = false
+        collegeText.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        gradYear.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        primaryMajor.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        currJobTitle.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+         currEmployer.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        supportiveGroups.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
     }
     
     func changeValue(value: String) {
@@ -61,12 +68,8 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     //actions
-    
     @IBAction func pickIndustryClicked(_ sender: Any) {
         performSegue(withIdentifier: "toPresentModal", sender: nil)
-        //let presentedVC = industrySignUpViewController()
-        //presentedVC.delegate = self
-        //present(presentedVC, animated: true, completion: nil)
     }
     
     @IBAction func completeButtonClicked(_ sender: Any) {
@@ -99,6 +102,28 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     //funcitons
     //hides keyboard when user presses return
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.characters.count == 1 {
+            if textField.text?.characters.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let collegeName = collegeText.text, !collegeName.isEmpty,
+            let graduationYear = gradYear.text, !graduationYear.isEmpty,
+            let primaryMajor = primaryMajor.text, !primaryMajor.isEmpty,
+            let currJobTitle = currJobTitle.text, !currJobTitle.isEmpty,
+            let currEmployer = currEmployer.text, !currEmployer.isEmpty,
+            let supportiveGroups = supportiveGroups.text, !supportiveGroups.isEmpty
+            else {
+                completeButton.isEnabled = false
+                return
+        }
+        completeButton.isEnabled = true
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         collegeText.resignFirstResponder()
         gradYear.resignFirstResponder()

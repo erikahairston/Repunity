@@ -31,11 +31,15 @@ class signUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var isLGBTQSeg: UISegmentedControl!
     @IBOutlet weak var isFirstGenSeg: UISegmentedControl!
     @IBOutlet weak var funFactText: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.firstNameText.delegate = self
         self.funFactText.delegate = self
+        
+        firstNameText.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        funFactText.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
        
     }
     
@@ -123,40 +127,30 @@ class signUpVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.characters.count == 1 {
+            if textField.text?.characters.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let firstName = firstNameText.text, !firstName.isEmpty,
+            let goal = funFactText.text, !goal.isEmpty
+            else {
+                continueButton.isEnabled = false
+                return
+        }
+        continueButton.isEnabled = true
+    }
+    
     
     func performErrorAlert(message: String?) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
-        
     }
-    
-/*    func handleSignUp() {
-        if emailText.text != "" && passwordText.text != "" {
-            Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) { (user, error) in
-
-                if error != nil {
-                    self.performErrorAlert(message: error?.localizedDescription)
-                } else {
-
-                    //turning the rest of user info into a dictionary to upload
-                    let role_model = ["name" : self.firstNameText.text!, "email" : (Auth.auth().currentUser!.email!), "race" : self.raceSelection, "gender" : self.genderSelection, "sector" : self.sectorSelection] as [String : Any]
-
-                    self.ref.child("roleModels").child((Auth.auth().currentUser?.uid)!).setValue(role_model)
-
-
-                    UserDefaults.standard.set(user!.email, forKey: "user")
-                    UserDefaults.standard.synchronize()
-
-                   let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                   delegate.rememberLogin()
-                }
-            }
-        } else {
-            self.performErrorAlert(message: "Username and password needed")
-        }
-    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let continueCreateAccountVC = segue.destination as! part2SignUpVC
@@ -167,6 +161,4 @@ class signUpVC: UIViewController, UITextFieldDelegate {
         continueCreateAccountVC.isFirstGenSelection = isFirstGenSelection
         continueCreateAccountVC.funFact = funFactText.text!
     }
-    
-    
 }

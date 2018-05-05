@@ -17,15 +17,21 @@ class topModelCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var currIndustry: UILabel!
+    @IBOutlet weak var imgContainerView: UIView!
+    @IBOutlet weak var inCommonText: UILabel!
     
     func setTopValues(resultRoleModel: RoleModel){
         nameLabel.text = resultRoleModel.name
         ImageService.getImage(withURL: resultRoleModel.imgURL) { (image) in
             self.myTopImageView.image = image
         }
-       // myTopImageView.layer.cornerRadius = myTopImageView.bounds.height / 4
-        myTopImageView.clipsToBounds = true
-       currIndustry.text = resultRoleModel.industry
+       myTopImageView.layer.cornerRadius = myTopImageView.bounds.height / 4
+         myTopImageView.layer.masksToBounds = true
+        //imgContainerView!.layer.cornerRadius = 10
+        //imgContainerView!.layer.masksToBounds = true
+
+        currIndustry.text = resultRoleModel.industry
+        
         //currEmployerLabel.text = resultRoleModel.currEmployer
         
     }

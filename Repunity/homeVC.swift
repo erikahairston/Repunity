@@ -17,6 +17,8 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     //variables
     var topModels = [RoleModel]()
     var selectedTopModel = RoleModel()
+    var sortedRMs = [RoleModel]()
+    var rmsWithScores = [RoleModel : Int]()
     
     //outlests
     @IBOutlet weak var collectionView: UICollectionView!
@@ -73,7 +75,9 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     //populate cell views
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as! topModelCell
-        cell.setTopValues(resultRoleModel: topModels[indexPath.row])
+        let currTM = topModels[indexPath.row]
+        cell.setTopValues(resultRoleModel: currTM)
+        cell.inCommonText.text = "Match Score:" + String(rmsWithScores[currTM]! )
         return cell
     }
     
@@ -119,8 +123,8 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                     }
                 }
             }
-            let sortedRMs = self.assignScores(rankingModels : tempResults, nowUser : currentUser)
-            self.topModels = sortedRMs
+            (self.sortedRMs, self.rmsWithScores) = self.assignScores(rankingModels : tempResults, nowUser : currentUser)
+            self.topModels = self.sortedRMs
             self.collectionView.reloadData()
             
             let newRM = tempResults[self.pickSpotlight(countedRMs: tempResults.count)]
@@ -129,7 +133,7 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
  
-    func assignScores(rankingModels : [RoleModel], nowUser : RoleModel) -> [RoleModel] {
+    func assignScores(rankingModels : [RoleModel], nowUser : RoleModel) -> ([RoleModel], [RoleModel : Int]) {
         var matchScore = [RoleModel : Int]()
         var score = 0
         var topTenRMs = [RoleModel]()
@@ -144,11 +148,10 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             for count in 0...9 {
                 topTenRMs.append(sortedRoleModels[count])
             }
-            return topTenRMs
+            return (topTenRMs, matchScore)
         } else {
-            return sortedRoleModels
+            return (sortedRoleModels, matchScore)
         }
-       return sortedRoleModels
     }
     
     func calculateScore(compareRm: RoleModel, nowUser1: RoleModel) -> Int {
