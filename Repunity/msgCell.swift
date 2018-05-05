@@ -58,7 +58,7 @@ class msgCell: UITableViewCell {
     func setMsgUsers(messagedUser: Message) {
         if checkIsCurrSender(messagedUser: messagedUser) {
             nameLabel.text = messagedUser.receiverName
-            self.turnUrlToImg(urlStringl: messagedUser.senderPhotoURL, messagedUser: messagedUser)
+            self.turnUrlToImg(urlStringl: messagedUser.receiverPhotoURL, messagedUser: messagedUser)
             print("IN SET MSG USRE \(messagedUser.sentByID)")
 //            let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(messagedUser.sentToID)/photoURL.json")
 //

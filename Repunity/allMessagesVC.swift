@@ -71,7 +71,7 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         var msgIds = [String]()
         let resultsRef = Database.database().reference().child("messages")
         resultsRef.observe(.value, with: { snapshot in
-            for child in snapshot.children {
+            for child in (snapshot.children).reversed() {
                  if let childSnapshot = child as? DataSnapshot,
                 let dict = childSnapshot.value as? [String: Any],
                 let receiverName = dict["receiverName"] as? String,
@@ -79,9 +79,10 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
                 let sentByID = dict["sentByID"] as? String,
                 let sentToID = dict["sentToID"] as? String,
                 let senderPhotoURL = dict["senderPhotoURL"] as? String,
+                let receiverPhotoURL = dict["receiverPhotoURL"] as? String,
                 let text = dict["text"] as? String{
                     
-                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text, senderPhotoURL:senderPhotoURL)
+                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text, senderPhotoURL:senderPhotoURL, receiverPhotoURL:receiverPhotoURL)
                     
                     print("printerNAME: \(singleMsg.senderName)")
                     print("printing sender message: \(singleMsg.text)")

@@ -61,9 +61,10 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     let sentByID = dict["sentByID"] as? String,
                     let sentToID = dict["sentToID"] as? String,
                     let senderPhotoURL = dict["senderPhotoURL"] as? String,
+                    let receiverPhotoURL = dict["receiverPhotoURL"] as? String,
                     let text = dict["text"] as? String{
                     
-                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text, senderPhotoURL:senderPhotoURL)
+                    let singleMsg = Message(receiverName:receiverName, senderName:senderName, sentByID:sentByID, sentToID:sentToID, text:text, senderPhotoURL:senderPhotoURL, receiverPhotoURL:receiverPhotoURL)
                     print(singleMsg.senderName)
                     
                     //only show msgs between the curr and selected users
@@ -157,46 +158,59 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.ourMessages = []
         let (receiverID, receiverName) = getReceiver()
         
-        let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
+        let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels.json")
         print("https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             print("printing response")
             
-            self.currName = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
-//            self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
-            self.currName = String(self.currName.dropFirst())
-            self.currName = String(self.currName.dropLast())
-//            do {
-//                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
-//                let posts = json["name"] as? [[String: Any]] ?? []
-//                print("printing posts")
-//                print(posts)
-//
-//            } catch let error as NSError
-//            {
-//                print(error)
-//            }
+            guard let data = data, error == nil else { return }
             
-            // print("sender name before save: \(getSender())")
-             mdata["senderName"] = self.currName
-             mdata["receiverName"] = receiverName
-            print("receiver name")
-            print(receiverName)
-            print("receiver name mdata")
-            print(mdata["receiverName"] as String?)
-            print("trying to get photoURL from auth")
-            print(Auth.auth().currentUser?.photoURL)
-            if let photoURL = Auth.auth().currentUser?.photoURL {
-                mdata["senderPhotoURL"] = photoURL.absoluteString
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                let senderRoleModel = json[self.currUserID] as! [String: Any]
+                let receiverRoleModel = json[receiverID] as! [String: Any]
+                
+                self.currName = (senderRoleModel["name"] as? String)!
+                //self.currName = self.currName.replacingOccurrences(of: "\\/", with: "/")
+                //self.currName = String(self.currName.dropFirst())
+                //self.currName = String(self.currName.dropLast())
+                //            do {
+                //                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                //                let posts = json["name"] as? [[String: Any]] ?? []
+                //                print("printing posts")
+                //                print(posts)
+                //
+                //            } catch let error as NSError
+                //            {
+                //                print(error)
+                //            }
+                
+                // print("sender name before save: \(getSender())")
+                mdata["senderName"] = self.currName
+                mdata["receiverName"] = receiverName
+                print("receiver name")
+                print(receiverName)
+                print("receiver name mdata")
+                print(mdata["receiverName"] as String?)
+                print("trying to get photoURL from auth")
+                print(Auth.auth().currentUser?.photoURL)
+                if let photoURL = Auth.auth().currentUser?.photoURL {
+                    mdata["senderPhotoURL"] = photoURL.absoluteString
+                }
+                print("mdataSenderPhotoURL")
+                print(mdata["senderPhotoURL"])
+                mdata["receiverPhotoURL"] = receiverRoleModel["photoURL"] as! String
+                print("receiverPhotoURL")
+                mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
+                print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
+                mdata["sentToID"] = receiverID
+                
+                // Push data to Firebase Database
+                self.ref.child("messages").childByAutoId().setValue(mdata)
+            } catch let error as NSError {
+                print(error)
             }
-            print("mdataSenderPhotoURL")
-            print(mdata["senderPhotoURL"])
-            mdata["sentByID"] = (Auth.auth().currentUser?.uid)!
-            print("sent BY ID: \((Auth.auth().currentUser?.uid)!)")
-            mdata["sentToID"] = receiverID
-            
-            // Push data to Firebase Database
-            self.ref.child("messages").childByAutoId().setValue(mdata)
+        
         }
         task.resume()
     }
