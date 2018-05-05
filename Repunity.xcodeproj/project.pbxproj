@@ -65,6 +65,9 @@
 		03823E51209C1F32002E6BEC /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E50209C1F31002E6BEC /* signin.png */; };
 		03823E53209C2449002E6BEC /* launchWithDescript.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E52209C2448002E6BEC /* launchWithDescript.png */; };
 		03823E55209C24A2002E6BEC /* signInBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 03823E54209C24A2002E6BEC /* signInBack.png */; };
+		03823E59209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */; };
+		03823E5A209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */; };
+		03823E5B209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */; };
 		03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B68209A818C00EB4446 /* allMessagesVC.swift */; };
 		03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
 		03C63B6E209A8D6400EB4446 /* msgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C63B6C209A8D6400EB4446 /* msgCell.swift */; };
@@ -136,6 +139,7 @@
 		03823E50209C1F31002E6BEC /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin.png; sourceTree = "<group>"; };
 		03823E52209C2448002E6BEC /* launchWithDescript.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchWithDescript.png; sourceTree = "<group>"; };
 		03823E54209C24A2002E6BEC /* signInBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signInBack.png; sourceTree = "<group>"; };
+		03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = industrySignUpViewController.swift; sourceTree = "<group>"; };
 		03C63B68209A818C00EB4446 /* allMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allMessagesVC.swift; sourceTree = "<group>"; };
 		03C63B6C209A8D6400EB4446 /* msgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msgCell.swift; sourceTree = "<group>"; };
 		03C63B70209A953700EB4446 /* detailMsgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailMsgVC.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				0372F380208FAE160045A184 /* signInVC.swift */,
 				03703897208FD15300561E06 /* signUpVC.swift */,
 				033F274420977161001EAF4D /* part2SignUpVC.swift */,
+				03823E58209CF2B4002E6BEC /* industrySignUpViewController.swift */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				03C76692209955310053AEB8 /* topModelCell.swift in Sources */,
 				037038A22091150200561E06 /* resultsCell.swift in Sources */,
 				03C63B6D209A8D6400EB4446 /* msgCell.swift in Sources */,
+				03823E59209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */,
 				033DEEA5209B131000D0FCE8 /* singleMsgCell.swift in Sources */,
 				0370389E2091029800561E06 /* resultsVC.swift in Sources */,
 				03C63B71209A953700EB4446 /* detailMsgVC.swift in Sources */,
@@ -589,6 +595,7 @@
 				03823E39209B8C9B002E6BEC /* topModelCell.swift in Sources */,
 				033F274820979008001EAF4D /* AppDelegate.swift in Sources */,
 				03C63B72209A953700EB4446 /* detailMsgVC.swift in Sources */,
+				03823E5A209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */,
 				03823E31209B8C87002E6BEC /* signUpVC.swift in Sources */,
 				033F274620977161001EAF4D /* part2SignUpVC.swift in Sources */,
 				03823E2D209B8C80002E6BEC /* homeVC.swift in Sources */,
@@ -616,6 +623,7 @@
 				03823E3A209B8C9B002E6BEC /* topModelCell.swift in Sources */,
 				033F274920979009001EAF4D /* AppDelegate.swift in Sources */,
 				03C63B73209A953700EB4446 /* detailMsgVC.swift in Sources */,
+				03823E5B209CF2B4002E6BEC /* industrySignUpViewController.swift in Sources */,
 				03823E32209B8C87002E6BEC /* signUpVC.swift in Sources */,
 				033F274720977161001EAF4D /* part2SignUpVC.swift in Sources */,
 				03823E2E209B8C80002E6BEC /* homeVC.swift in Sources */,

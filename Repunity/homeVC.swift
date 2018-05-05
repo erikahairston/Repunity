@@ -79,7 +79,7 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          selectedTopModel = topModels[indexPath.row]
-        //performSegue(withIdentifier: "toTopRMProPic", sender: nil)
+        performSegue(withIdentifier: "toTopRMProPic", sender: nil)
     }
     
     

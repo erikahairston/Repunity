@@ -12,18 +12,19 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate  {
+
+class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, ModalDelegate {
+    
     
     //outlets
     @IBOutlet weak var collegeText: UITextField!
     @IBOutlet weak var gradYear: UITextField!
     @IBOutlet weak var primaryMajor: UITextField!
-    @IBOutlet weak var industrySeg: UISegmentedControl!
     @IBOutlet weak var currJobTitle: UITextField!
     @IBOutlet weak var currEmployer: UITextField!
     @IBOutlet weak var supportiveGroups: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var addPhotoLabel: UILabel!
+    @IBOutlet weak var primaryIndustryText: UILabel!
     
     
     //variables
@@ -33,12 +34,11 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     var raceArray = [String]() //to use
     var raceSelection = ""
     var genderSelection = ""
-    var industryArray = [String]() //to use
-    var industrySelection = ""
     var isLGBTQSelection = false
     var isFirstGenSelection = false
     var funFact = ""
     var finalUrl = ""
+    var selectedIndustry = ""
     
     
 
@@ -55,10 +55,21 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
+    func changeValue(value: String) {
+        selectedIndustry = value
+        primaryIndustryText.text = selectedIndustry
+    }
     
     //actions
+    
+    @IBAction func pickIndustryClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toPresentModal", sender: nil)
+        //let presentedVC = industrySignUpViewController()
+        //presentedVC.delegate = self
+        //present(presentedVC, animated: true, completion: nil)
+    }
+    
     @IBAction func completeButtonClicked(_ sender: Any) {
-        mapIndustryIndex()
         uploadProfilePic(profileImage.image!) { (url) in
             if url != nil {
                 print("Success: photo successfully added to storage")
@@ -117,24 +128,10 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
-        self.addPhotoLabel.isHidden = true
         self.dismiss(animated: true, completion: nil)
     }
     
-    func mapIndustryIndex() {
-        switch industrySeg.selectedSegmentIndex
-        {
-            case 0:
-                self.industrySelection = "Tech";
-            case 1:
-                self.industrySelection = "Government";
-            case 2:
-                self.industrySelection = "Art";
-            default:
-                self.industrySelection = "Tech";
-        }
-    }
-    
+
     //retrieve data from firebase
 /*    func getDataFromServer() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -207,10 +204,16 @@ class part2SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         print(datURL)
     
         
-        let role_model = ["uuid" : (Auth.auth().currentUser?.uid)!, "name" : self.firstName, "email" : (Auth.auth().currentUser!.email!), "photoURL" : datURL, "race" : self.raceSelection, "gender" : self.genderSelection, "isLGBTQ" : self.isLGBTQSelection, "isFirstGen" : isFirstGenSelection, "underGrad" : collegeText.text!, "gradYear" : self.gradYear.text!, "primaryMajor" : self.primaryMajor.text!, "industry" : self.industrySelection, "currJobTitle" : currJobTitle.text!, "currEmployer" : currEmployer.text!, "supportGroups" : supportiveGroups!.text!, "funFact" : funFact] as [String : Any]
+        let role_model = ["uuid" : (Auth.auth().currentUser?.uid)!, "name" : self.firstName, "email" : (Auth.auth().currentUser!.email!), "photoURL" : datURL, "race" : self.raceSelection, "gender" : self.genderSelection, "isLGBTQ" : self.isLGBTQSelection, "isFirstGen" : isFirstGenSelection, "underGrad" : collegeText.text!, "gradYear" : self.gradYear.text!, "primaryMajor" : self.primaryMajor.text!, "industry" : self.selectedIndustry, "currJobTitle" : currJobTitle.text!, "currEmployer" : currEmployer.text!, "supportGroups" : supportiveGroups!.text!, "funFact" : funFact] as [String : Any]
         
         self.ref.child("roleModels").child((Auth.auth().currentUser?.uid)!).setValue(role_model)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? industrySignUpViewController {
+            destination.delegate = self
+        }
     }
 
 }
