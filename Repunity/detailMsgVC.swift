@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     //variables
     var selectedUserToChat = RoleModel()
@@ -31,6 +31,7 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         tableView.dataSource = self
         tableView.delegate = self
+        self.textField.delegate = self
         tableView.reloadData()
         
         observeMsgsWithUser()
@@ -44,6 +45,7 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             self.ref.child("messages").removeObserver(withHandle: _refHandle)
         }
     }
+    
     
     //generate List of all the msgs u share with this user
     func observeMsgsWithUser() {
@@ -112,7 +114,7 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
         textField.text = ""
-        view.endEditing(true)
+        self.view.endEditing(true)
         let data = ["text": text]
         sendMessage(withData: data)
         return true

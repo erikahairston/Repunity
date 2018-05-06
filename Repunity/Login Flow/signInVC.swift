@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class signInVC: UIViewController {
+class signInVC: UIViewController, UITextFieldDelegate {
 
     //outlets
     @IBOutlet weak var emailText: UITextField!
@@ -28,9 +28,9 @@ class signInVC: UIViewController {
         // Do any additional setup after loading the view.
         confirmationPasswordText.isHidden = true
         backSignIn.isHidden = true
-        
+         self.passwordText.delegate = self
+         self.confirmationPasswordText.delegate = self
     }
-
 
     //actions
     @IBAction func backToSignInClicked(_ sender: Any) {
@@ -61,9 +61,7 @@ class signInVC: UIViewController {
             
         } else {
             createAccount()
-            
         }
-
     }
     
 
@@ -74,6 +72,11 @@ class signInVC: UIViewController {
         backSignIn.isHidden = false
     }
     //functions
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     func performErrorAlert(message: String?) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
