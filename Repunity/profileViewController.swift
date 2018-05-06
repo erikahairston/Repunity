@@ -33,6 +33,11 @@ class profileViewController: UIViewController {
         nameLabel.text = currRoleModel.name
         ImageService.getImage(withURL: currRoleModel.imgURL) { (image) in
             self.profileImageView.image = image
+            self.profileImageView.layer.borderWidth = 1
+            self.profileImageView.layer.masksToBounds = false
+            //self.profileImageView.layer.borderColor = UIColor.black.cgColor
+            self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height/2
+            self.profileImageView.clipsToBounds = true
             }
         funFactLabel.text = "\"" + currRoleModel.funFact + "\""
         industryLabel.text = "In the " + currRoleModel.industry + " Industry"
