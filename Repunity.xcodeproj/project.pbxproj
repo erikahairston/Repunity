@@ -84,6 +84,10 @@
 		03C63B7A209ACE0000EB4446 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
 		03C63B7B209ACE0000EB4446 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F274C2098660C001EAF4D /* ImageService.swift */; };
 		03C76692209955310053AEB8 /* topModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C76691209955300053AEB8 /* topModelCell.swift */; };
+		03F42DCB209EADC400AD2BAD /* Repunity.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F42DCA209EADC300AD2BAD /* Repunity.png */; };
+		03F42DCD209EB47600AD2BAD /* AboutModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F42DCC209EB47600AD2BAD /* AboutModalVC.swift */; };
+		03F42DCE209EB47600AD2BAD /* AboutModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F42DCC209EB47600AD2BAD /* AboutModalVC.swift */; };
+		03F42DCF209EB47600AD2BAD /* AboutModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F42DCC209EB47600AD2BAD /* AboutModalVC.swift */; };
 		03F432DD209DBBCF006E72AD /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F432DC209DBBCF006E72AD /* Assests.xcassets */; };
 		03F7045A2092655100D44225 /* catCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F704592092655100D44225 /* catCell.swift */; };
 		33CD3DB9FB46361FE68F53CC /* Pods_RepunityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD671A5921B0BD55DA60E3 /* Pods_RepunityUITests.framework */; };
@@ -152,6 +156,8 @@
 		03C63B70209A953700EB4446 /* detailMsgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailMsgVC.swift; sourceTree = "<group>"; };
 		03C63B76209AA7AD00EB4446 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		03C76691209955300053AEB8 /* topModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topModelCell.swift; sourceTree = "<group>"; };
+		03F42DCA209EADC300AD2BAD /* Repunity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Repunity.png; sourceTree = "<group>"; };
+		03F42DCC209EB47600AD2BAD /* AboutModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModalVC.swift; sourceTree = "<group>"; };
 		03F432DC209DBBCF006E72AD /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assests.xcassets; sourceTree = "<group>"; };
 		03F704592092655100D44225 /* catCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catCell.swift; sourceTree = "<group>"; };
 		0FC56F2A7A697F828EF753F3 /* Pods-RepunityUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepunityUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepunityUITests/Pods-RepunityUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 			children = (
 				03823E41209BEB94002E6BEC /* swuare.png */,
 				039F99F9209DA76300339479 /* kelli-tungay-324329-unsplash.jpg */,
+				03F42DCA209EADC300AD2BAD /* Repunity.png */,
 				03823E43209BFE50002E6BEC /* pinkwall.jpg */,
 				033F274A2097AA9A001EAF4D /* icons8-female-profile-filled-100.png */,
 				03823E45209BFEA9002E6BEC /* cloud_cover.jpg */,
@@ -239,14 +246,15 @@
 		0372F34F208F8F120045A184 /* Repunity */ = {
 			isa = PBXGroup;
 			children = (
-				033F27412096E107001EAF4D /* Imgs */,
 				0372F350208F8F120045A184 /* AppDelegate.swift */,
+				033F27412096E107001EAF4D /* Imgs */,
 				03823E49209C0380002E6BEC /* Models */,
 				03823E47209C02CD002E6BEC /* ViewControllers */,
 				03823E3D209B9AD5002E6BEC /* profileViewController.swift */,
 				0370389B2090200100561E06 /* accountVC.swift */,
 				0372F352208F8F130045A184 /* homeVC.swift */,
 				0370389D2091029800561E06 /* resultsVC.swift */,
+				03F42DCC209EB47600AD2BAD /* AboutModalVC.swift */,
 				0372F354208F8F130045A184 /* discoverVC.swift */,
 				0372F356208F8F130045A184 /* Main.storyboard */,
 				0372F35B208F8F180045A184 /* LaunchScreen.storyboard */,
@@ -464,6 +472,7 @@
 				0372F35D208F8F180045A184 /* LaunchScreen.storyboard in Resources */,
 				03823E42209BEB95002E6BEC /* swuare.png in Resources */,
 				039F99FA209DA76400339479 /* kelli-tungay-324329-unsplash.jpg in Resources */,
+				03F42DCB209EADC400AD2BAD /* Repunity.png in Resources */,
 				03823E53209C2449002E6BEC /* launchWithDescript.png in Resources */,
 				033F27432096E125001EAF4D /* square.png in Resources */,
 				03F432DD209DBBCF006E72AD /* Assests.xcassets in Resources */,
@@ -582,6 +591,7 @@
 				03823E3E209B9AD5002E6BEC /* profileViewController.swift in Sources */,
 				0370389C2090200100561E06 /* accountVC.swift in Sources */,
 				03F7045A2092655100D44225 /* catCell.swift in Sources */,
+				03F42DCD209EB47600AD2BAD /* AboutModalVC.swift in Sources */,
 				03C63B69209A818C00EB4446 /* allMessagesVC.swift in Sources */,
 				03C63B77209AA7AD00EB4446 /* Message.swift in Sources */,
 				033F274520977161001EAF4D /* part2SignUpVC.swift in Sources */,
@@ -622,6 +632,7 @@
 				0372F368208F8F180045A184 /* RepunityTests.swift in Sources */,
 				03C63B78209AAE7300EB4446 /* Message.swift in Sources */,
 				03823E3B209B8E98002E6BEC /* resultsCell.swift in Sources */,
+				03F42DCE209EB47600AD2BAD /* AboutModalVC.swift in Sources */,
 				03C63B7A209ACE0000EB4446 /* ImageService.swift in Sources */,
 				0370389F2091029800561E06 /* resultsVC.swift in Sources */,
 				03823E2F209B8C83002E6BEC /* signInVC.swift in Sources */,
@@ -650,6 +661,7 @@
 				0372F373208F8F180045A184 /* RepunityUITests.swift in Sources */,
 				03C63B79209AAE7400EB4446 /* Message.swift in Sources */,
 				03823E3C209B8E98002E6BEC /* resultsCell.swift in Sources */,
+				03F42DCF209EB47600AD2BAD /* AboutModalVC.swift in Sources */,
 				03C63B7B209ACE0000EB4446 /* ImageService.swift in Sources */,
 				037038A02091029800561E06 /* resultsVC.swift in Sources */,
 				03823E30209B8C84002E6BEC /* signInVC.swift in Sources */,
