@@ -56,7 +56,9 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("possIND: \(possModel.industry) , resultIND: \(resultIndustry)")
             if possModel.race == resultId {
                 return true
-            } else if possModel.gender == resultId {
+            } else if possModel.gender == "Woman" && resultId == "Women" {
+                return true
+            } else if possModel.gender == "Man" && resultId == "Men" {
                 return true
             } else if possModel.isLGBTQ == true && resultId == "LGBTQ"{
                 return true

@@ -12,7 +12,7 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     //vars
     let ids : [String] = ["Black", "Latinx", "Native", "Asian", "Women", "Men", "Non-Binary", "Trans*", "LGBTQ", "firstGen"]
-    let industries :  [String] = ["Architecture", "Communitications", "Consulting", "Education", "Energy", "Entertainment", "Environment", "Finance", "Fine Arts", "Government", "Healthcare", "Law" ,"Publishing/Media", "Religious-Instituion",  "Retail", "Social Work", "Technology", "Executive"]
+    let industries :  [String] = ["Architecture", "Communitications", "Consulting", "Education", "Energy", "Entertainment", "Environment", "Finance", "Fine-Arts", "Government", "Healthcare", "Law" ,"Publishing/Media", "Religious-Instituion",  "Retail", "Social Work", "Technology", "Executive"]
 
     var chosenCat = ""
     var catNames = [String]()
