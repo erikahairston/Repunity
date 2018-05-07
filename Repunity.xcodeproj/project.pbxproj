@@ -249,7 +249,7 @@
 				0372F350208F8F120045A184 /* AppDelegate.swift */,
 				033F27412096E107001EAF4D /* Imgs */,
 				03823E49209C0380002E6BEC /* Models */,
-				03823E47209C02CD002E6BEC /* ViewControllers */,
+				03823E47209C02CD002E6BEC /* LoginMsgsViewControllers */,
 				03823E3D209B9AD5002E6BEC /* profileViewController.swift */,
 				0370389B2090200100561E06 /* accountVC.swift */,
 				0372F352208F8F130045A184 /* homeVC.swift */,
@@ -283,13 +283,13 @@
 			path = RepunityUITests;
 			sourceTree = "<group>";
 		};
-		03823E47209C02CD002E6BEC /* ViewControllers */ = {
+		03823E47209C02CD002E6BEC /* LoginMsgsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				03823E57209C4781002E6BEC /* Msg Flow */,
 				03823E48209C02DF002E6BEC /* Login Flow */,
 			);
-			name = ViewControllers;
+			name = LoginMsgsViewControllers;
 			sourceTree = "<group>";
 		};
 		03823E48209C02DF002E6BEC /* Login Flow */ = {

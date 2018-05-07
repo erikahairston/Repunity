@@ -31,7 +31,6 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //tableView.tableFooterView = UIView()
         tableView.reloadData()
         if category != "" {
-            print("AND THE GAG IS: Category : \(category)")
             observeCatResults()
 
         } else if (notTopModel) {
@@ -49,6 +48,7 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return(resultId,resultIndustry)
     }
     
+    //set category comparisons
     func checkIfMatchCat(possModel: RoleModel) -> Bool {
         let (resultId, resultIndustry) = getIdInd()
         
@@ -165,12 +165,6 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! resultsCell
         cell.setResults(resultRoleModel: resultModels[indexPath.row])
         
-        //let cell = UITableViewCell()
-        // set values
-        // cell.postText.text = postCommentArray[indexPath.row]
-        //cell.userNameLabel.text = userEmailArray[indexPath.row]
-        //cell.postImage.sd_setImage(with: URL(string: self.postImageURLArray[indexPath.row]))
-        
         return cell
     }
     
@@ -179,8 +173,6 @@ class resultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let destinationVC = segue.destination as! profileViewController
             destinationVC.currRoleModel = selectedResult
         }
-    }
-    //actions
-    
+    }    
 
 }

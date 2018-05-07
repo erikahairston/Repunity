@@ -25,7 +25,6 @@ class signInVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         confirmationPasswordText.isHidden = true
         backSignIn.isHidden = true
          self.passwordText.delegate = self
@@ -99,7 +98,6 @@ class signInVC: UIViewController, UITextFieldDelegate {
                         
                         UserDefaults.standard.set(user!.email, forKey: "user")
                         UserDefaults.standard.synchronize()
-                        print ("User Created \(self.emailText.text!))")
                         self.performSegue(withIdentifier: "toSignUpVC", sender: nil)
                         
                        // let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate

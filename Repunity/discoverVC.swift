@@ -24,7 +24,6 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         catNames = createCatNames(from : ids, to : industries )
        
     }
@@ -39,7 +38,6 @@ class discoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 newIndArray.append(industry)
                 newIdArray.append(id)
             }
-            
         }
         return catNames
     }

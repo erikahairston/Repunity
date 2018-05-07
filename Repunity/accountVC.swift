@@ -61,7 +61,7 @@ class accountVC: UIViewController {
         performSegue(withIdentifier: "accountToLogIn", sender: nil)
     }
     
-    //functions
+    //retrieve the current user's RoleModel attribute values
     func observeCurrRM() {
         let resultsRef = Database.database().reference().child("roleModels")
         resultsRef.observe(.value, with: { snapshot in
@@ -89,7 +89,6 @@ class accountVC: UIViewController {
                     
                     if resultRoleModel.uuid == (Auth.auth().currentUser?.uid)! {
                         self.currUser = resultRoleModel
-                        print("THIS IS MY ACCOUNT \(self.currUser)")
                         self.nameLabel.text = self.currUser.name
                         ImageService.getImage(withURL: self.currUser.imgURL) { (image) in
                             self.profileImageView.image = image

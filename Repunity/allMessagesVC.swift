@@ -122,10 +122,9 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     
-    //setup Table
+    //setup TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if msgdUsers.count == 0 {
-            //TODO: print something cute like, try messaging
             messageTitile.text = "You have no conversations"
             return 0
         } else {
@@ -149,7 +148,6 @@ class allMessagesVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! msgCell

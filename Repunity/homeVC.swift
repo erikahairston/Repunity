@@ -134,7 +134,7 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         })
     }
     
- 
+    //given current user, compares their RoleModel attributes to every other one to give a score to each
     func assignScores(rankingModels : [RoleModel], nowUser : RoleModel) -> ([RoleModel], [RoleModel : Int]) {
         var matchScore = [RoleModel : Int]()
         var score = 0
@@ -156,38 +156,39 @@ class homeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
+    //scoring algorithm
     func calculateScore(compareRm: RoleModel, nowUser1: RoleModel) -> Int {
         var score = 0
         if nowUser1.race == compareRm.race {
-            print("nowUser1.race = \(nowUser1.race) compareRm.race = \(compareRm.race)")
+//            print("nowUser1.race = \(nowUser1.race) compareRm.race = \(compareRm.race)")
             score = score + 5
         }
         if nowUser1.gender == compareRm.gender {
-            print("nowUser1.gender = \(nowUser1.gender) compareRm.race = \(compareRm.gender)")
+//            print("nowUser1.gender = \(nowUser1.gender) compareRm.race = \(compareRm.gender)")
 
             score = score + 5
         }
         if nowUser1.industry == compareRm.industry {
-            print("nowUser1.industry = \(nowUser1.industry) compareRm.industry = \(compareRm.industry)")
+//            print("nowUser1.industry = \(nowUser1.industry) compareRm.industry = \(compareRm.industry)")
 
             score = score + 5
         }
         if nowUser1.primaryMajor == compareRm.primaryMajor {
-            print("nowUser1.primaryMajor = \(nowUser1.primaryMajor) ompareRm.primaryMajor = \(compareRm.primaryMajor)")
+//            print("nowUser1.primaryMajor = \(nowUser1.primaryMajor) ompareRm.primaryMajor = \(compareRm.primaryMajor)")
 
             score = score + 5
         }
         if nowUser1.isLGBTQ && compareRm.isLGBTQ {
-            print("nowUser1.isLGBTQ = \(nowUser1.isLGBTQ) compareRm.isLGBTQ = \(compareRm.isLGBTQ)")
+//            print("nowUser1.isLGBTQ = \(nowUser1.isLGBTQ) compareRm.isLGBTQ = \(compareRm.isLGBTQ)")
 
             score = score + 5
         }
         if nowUser1.isFirstGen && compareRm.isFirstGen {
-            print("nowUser1.isFirstGen = \(nowUser1.isFirstGen) compareRm.isFirstGen = \(compareRm.isFirstGen)")
+//            print("nowUser1.isFirstGen = \(nowUser1.isFirstGen) compareRm.isFirstGen = \(compareRm.isFirstGen)")
 
             score = score + 5
         }
-        print("score of \(compareRm.name) is \(score)")
+//        print("score of \(compareRm.name) is \(score)")
         return score
     }
     

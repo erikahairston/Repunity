@@ -87,6 +87,7 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         return(receiverID,receiverName)
     }
     
+    //get the sender of the msg
     func getSender() -> Void {
         
         let url = URL(string: "https://repunity-8bf58.firebaseio.com/roleModels/\(self.currUserID)/name.json")
@@ -119,8 +120,8 @@ class detailMsgVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         sendMessage(withData: data)
         return true
     }
-
     
+    //save msg data to the Firebase data table after retrieving id and photo from users
     func sendMessage(withData data: [String: String]) {
         var mdata = data
         self.ourMessages = []

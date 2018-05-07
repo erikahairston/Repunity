@@ -69,6 +69,8 @@ class signUpVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    //functions to get the values of segments
+    
     func mapGenderIndx() {
         switch genderSeg.selectedSegmentIndex
         {

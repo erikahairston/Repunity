@@ -23,7 +23,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swuare.png" translatesAutoresizingMaskIntoConstraints="NO" id="FFn-ew-RoD">
                                 <rect key="frame" x="0.0" y="320" width="375" height="298"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="funFact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHk-hL-b9P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="funFact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHk-hL-b9P">
                                 <rect key="frame" x="0.0" y="579" width="375" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="KUC-lW-uB9"/>
@@ -649,7 +649,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBI-KC-bIF">
-                                <rect key="frame" x="90" y="383" width="199" height="22"/>
+                                <rect key="frame" x="0.0" y="383" width="375" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="uk8-kx-fZE"/>
                                 </constraints>
@@ -726,10 +726,10 @@
                             <constraint firstItem="Hg0-tu-e5r" firstAttribute="top" secondItem="jDe-cA-pBk" secondAttribute="bottom" constant="16" id="bvN-br-Ycz"/>
                             <constraint firstItem="9aM-YL-L9T" firstAttribute="top" secondItem="qkj-jR-PhA" secondAttribute="bottom" constant="8" symbolic="YES" id="dMx-0p-PCb"/>
                             <constraint firstItem="9aM-YL-L9T" firstAttribute="centerX" secondItem="sTa-zx-1wv" secondAttribute="centerX" id="e3i-xX-mCl"/>
-                            <constraint firstItem="QBI-KC-bIF" firstAttribute="leading" secondItem="WOq-fQ-riW" secondAttribute="leading" constant="90" id="fH4-bv-5Ya"/>
+                            <constraint firstItem="QBI-KC-bIF" firstAttribute="leading" secondItem="WOq-fQ-riW" secondAttribute="leading" id="fH4-bv-5Ya"/>
                             <constraint firstItem="WOq-fQ-riW" firstAttribute="trailing" secondItem="zYs-mJ-vQN" secondAttribute="trailing" id="g0Z-El-qdy"/>
                             <constraint firstItem="KJK-db-jmH" firstAttribute="centerY" secondItem="sTa-zx-1wv" secondAttribute="centerY" constant="241" id="oQr-ma-JtV"/>
-                            <constraint firstItem="WOq-fQ-riW" firstAttribute="trailing" secondItem="QBI-KC-bIF" secondAttribute="trailing" constant="86" id="p1u-8P-XnA"/>
+                            <constraint firstItem="WOq-fQ-riW" firstAttribute="trailing" secondItem="QBI-KC-bIF" secondAttribute="trailing" id="p1u-8P-XnA"/>
                             <constraint firstItem="KJK-db-jmH" firstAttribute="centerX" secondItem="sTa-zx-1wv" secondAttribute="centerX" id="rVo-Tt-4t8"/>
                             <constraint firstItem="jDe-cA-pBk" firstAttribute="leading" secondItem="WOq-fQ-riW" secondAttribute="leading" constant="123" id="soL-Mw-r8V"/>
                             <constraint firstItem="DRO-zH-nAR" firstAttribute="centerX" secondItem="sTa-zx-1wv" secondAttribute="centerX" id="swg-C0-5hb"/>
@@ -752,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtQ-NR-TJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422" y="36"/>
+            <point key="canvasLocation" x="2421.5999999999999" y="35.532233883058474"/>
         </scene>
         <!--Account-->
         <scene sceneID="Lud-NY-mSs">
@@ -806,7 +806,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun Fact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-vF-INQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun Fact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-vF-INQ">
                                 <rect key="frame" x="48" y="483" width="279" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="aVY-Al-ghz"/>
@@ -1485,6 +1485,7 @@
                                                 <constraint firstItem="fI5-5o-fic" firstAttribute="top" secondItem="49J-eg-C0K" secondAttribute="topMargin" id="F3e-nj-qp4"/>
                                                 <constraint firstItem="2lx-BT-Y3F" firstAttribute="top" secondItem="49J-eg-C0K" secondAttribute="topMargin" constant="30" id="Ixd-Rx-1PJ"/>
                                                 <constraint firstItem="mC3-yb-1kn" firstAttribute="top" secondItem="2lx-BT-Y3F" secondAttribute="bottom" constant="19" id="JLi-rz-Wc1"/>
+                                                <constraint firstItem="mC3-yb-1kn" firstAttribute="leading" secondItem="fI5-5o-fic" secondAttribute="trailing" constant="30" id="Qk2-xh-aQj"/>
                                                 <constraint firstItem="2lx-BT-Y3F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mC3-yb-1kn" secondAttribute="leading" id="Uw1-IA-bXf"/>
                                                 <constraint firstItem="fI5-5o-fic" firstAttribute="leading" secondItem="49J-eg-C0K" secondAttribute="leadingMargin" constant="13" id="cHZ-3g-PNe"/>
                                                 <constraint firstItem="mC3-yb-1kn" firstAttribute="height" secondItem="2lx-BT-Y3F" secondAttribute="height" id="f7I-nF-QZq"/>
@@ -1719,7 +1720,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tj4-4M-UZm"/>
-        <segue reference="8Jt-Cb-sZc"/>
+        <segue reference="Me3-Xc-mBB"/>
         <segue reference="cnI-0J-1ga"/>
         <segue reference="cjD-aD-A1e"/>
     </inferredMetricsTieBreakers>

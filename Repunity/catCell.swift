@@ -20,6 +20,5 @@ class catCell: UICollectionViewCell {
     
     @IBAction func catButtonPressed(_ sender: Any) {
         
-        print("success")
     }
 }
